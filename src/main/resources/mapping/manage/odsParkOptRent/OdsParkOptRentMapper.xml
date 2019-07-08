@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winter.mapper.manage.odsParkOptRent.OdsParkOptRentDao">
+	<!-- com.hqt1af.entity.manage.OdsParkOptRent -->
+ 	<resultMap id="base" type="OdsParkOptRent" >
+	     <result column="area_id" property="areaId" jdbcType="CHAR"/>
+	     <result column="month_received_money" property="monthReceivedMoney" jdbcType="DECIMAL"/>
+	     <result column="month_un_receive_money" property="monthUnReceiveMoney" jdbcType="DECIMAL"/>
+	     <result column="year_receive_money" property="yearReceiveMoney" jdbcType="DECIMAL"/>
+	     <result column="create_date" property="createDate" jdbcType="TIMESTAMP"/>
+ 	</resultMap>
+ 	
+ 	<!-- 查看详情 -->
+ 	<select id="find"  resultMap="base" parameterType="OdsParkOptRent">
+       SELECT t.* FROM ods_park_opt_rent t WHERE 1=1 
+       <if test="id != null and id!='' ">
+        	AND t.id=#{id}
+       </if>
+    </select>
+ 	
+ 	<!-- 列表查询 -->
+ 	<select id="findByPage"  resultMap="base" parameterType="OdsParkOptRent">
+       SELECT t.* FROM ods_park_opt_rent t WHERE 1=1 
+       <if test="param.status!= null">
+        AND t.status=#{param.status}
+       </if>
+       <if test="param.keyWord!=null and param.keyWord!='' ">
+       AND (t.name LIKE CONCAT('%',#{param.keyWord},'%'))
+       </if>
+        ORDER BY t.create_time desc
+    </select>
+    
+ 	<!-- 记录数 -->
+    <select id="count"  resultType="int" parameterType="OdsParkOptRent">
+       SELECT count(*) FROM ods_park_opt_rent t WHERE 1=1 
+    </select>  
+    
+    <!-- 添加 -->      
+ 	<insert id="insert" parameterType="OdsParkOptRent">	
+ 	<![CDATA[
+	INSERT INTO ods_park_opt_rent(
+	area_id ,month_received_money ,month_un_receive_money ,year_receive_money ,create_date 
+	) VALUES (
+	#{areaId}, #{monthReceivedMoney}, #{monthUnReceiveMoney}, #{yearReceiveMoney}, #{createDate} 
+	)
+	]]>  
+	</insert>
+	
+	<!-- 批量添加 -->      
+ 	<insert id="insertBatch" parameterType="java.util.List">	
+	INSERT INTO ods_park_opt_rent(
+	area_id ,month_received_money ,month_un_receive_money ,year_receive_money ,create_date 
+	) VALUES 
+	<foreach item="o" collection="list"  separator="," >
+	(#{o.areaId}, #{o.monthReceivedMoney}, #{o.monthUnReceiveMoney}, #{o.yearReceiveMoney}, #{o.createDate} )
+	</foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="OdsParkOptRent">
+		UPDATE ods_park_opt_rent 
+		SET
+          month_received_money = #{monthReceivedMoney},
+          month_un_receive_money = #{monthUnReceiveMoney},
+          year_receive_money = #{yearReceiveMoney},
+          create_date = #{createDate}
+		WHERE area_id=#{areaId}
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="OdsParkOptRent">
+	DELETE FROM ods_park_opt_rent  
+	WHERE id=#{id}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatch" parameterType ="java.util.List">
+	DELETE FROM ods_park_opt_rent WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+#{o.id}		</foreach>
+		)
+	</delete>
+	
+	<select id="findBySql" parameterType="string" resultMap="base">${sql}</select>
+
+    <select id="updateBySql" parameterType="string" resultType="java.lang.Integer">${sql}</select>
+    
+    <select id="findObjBySql" parameterType="string" resultType="java.lang.Object">${sql}</select>
+</mapper>

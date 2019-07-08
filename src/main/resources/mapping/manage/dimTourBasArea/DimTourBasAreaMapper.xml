@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winter.mapper.manage.dimTourBasArea.DimTourBasAreaDao">
+	<!-- com.hqt1af.entity.manage.DimTourBasArea -->
+ 	<resultMap id="base" type="DimTourBasArea" >
+		<result column="id" property="id" jdbcType="CHAR"/>
+		<result column="name" property="name" jdbcType="CHAR"/>
+		<result column="code" property="code" jdbcType="CHAR"/>
+		<result column="pid" property="pid" jdbcType="CHAR"/>
+		<result column="remark" property="remark" jdbcType="CHAR"/>
+		<result column="bearingCapacityMoment" property="bearingCapacityMoment" jdbcType="INTEGER"/>
+		<result column="bearingCapacityDay" property="bearingCapacityDay" jdbcType="INTEGER"/>
+		<result column="bearingCapacityMax" property="bearingCapacityMax" jdbcType="INTEGER"/>
+		<result column="floor_sum" property="floorSum" jdbcType="INTEGER"/>
+		<result column="total_area" property="totalArea" jdbcType="DECIMAL"/>
+		<result column="can_rent_area" property="canRentArea" jdbcType="DECIMAL"/>
+		<result column="rent_area" property="rentArea" jdbcType="DECIMAL"/>
+		<result column="vacancy_area" property="vacancyArea" jdbcType="DECIMAL"/>
+		<result column="inviting_area" property="invitingArea" jdbcType="DECIMAL"/>
+		<result column="supporting_area" property="supportingArea" jdbcType="DECIMAL"/>
+		<result column="enteprise_num" property="entepriseNum" jdbcType="INTEGER"/>
+		<result column="url_3d" property="url3d" jdbcType="VARCHAR"/>
+		<result column="sort" property="sort" jdbcType="INTEGER"/>
+		<result column="center" property="center" jdbcType="VARCHAR"/>
+		<result column="main_view" property="mainView" jdbcType="VARCHAR"/>
+		<result column="play" property="play" jdbcType="LONGVARCHAR"/>
+		<result column="range" property="range" jdbcType="LONGVARCHAR"/>
+		<result column="hlStatus" property="hlStatus" jdbcType="CHAR"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+ 	</resultMap>
+ 	
+ 	<!-- 查看详情 -->
+ 	<select id="find"  resultMap="base" parameterType="DimTourBasArea">
+       SELECT t.* FROM dim_tour_bas_area t WHERE 1=1 
+       <if test="id != null and id!='' ">
+        	AND t.id=#{id}
+       </if>
+    </select>
+ 	
+ 	<!-- 列表查询 -->
+ 	<select id="findByPage"  resultMap="base" parameterType="DimTourBasArea">
+       SELECT t.* FROM dim_tour_bas_area t WHERE 1=1 
+       <if test="param.status!= null">
+        AND t.status=#{param.status}
+       </if>
+       <if test="param.keyWord!=null and param.keyWord!='' ">
+       AND (t.name LIKE CONCAT('%',#{param.keyWord},'%'))
+       </if>
+        ORDER BY t.create_time desc
+    </select>
+    
+ 	<!-- 记录数 -->
+    <select id="count"  resultType="int" parameterType="DimTourBasArea">
+       SELECT count(*) FROM dim_tour_bas_area t WHERE 1=1 
+    </select>
+
+	<!-- 添加 -->
+	<insert id="insert" parameterType="DimTourBasArea">
+ 	<![CDATA[
+	INSERT INTO dim_tour_bas_area(
+	id ,name ,code ,pid ,remark , bearingCapacityMoment, bearingCapacityDay, bearingCapacityMax, floor_sum,total_area,can_rent_area,rent_area,vacancy_area,inviting_area,supporting_area,enteprise_num,url_3d,sort , center,main_view, play, `range`, hlStatus,createTime ,updateTime
+	) VALUES (
+	#{id}, #{name}, #{code}, #{pid}, #{remark}, #{bearingCapacityMoment}, #{bearingCapacityDay}, #{bearingCapacityMax} ,#{floorSum},#{totalArea},  #{canRentArea},#{rentArea}, #{vacancyArea}, #{invitingArea},#{supportingArea},#{entepriseNum},#{url3d}, #{sort},#{center},#{mainView},#{play},#{range},#{hlStatus}, #{createTime}, #{updateTime}
+	)
+	]]>
+	</insert>
+
+	<!-- 批量添加 -->
+	<insert id="insertBatch" parameterType="java.util.List">
+		INSERT INTO dim_tour_bas_area(
+		id ,name ,code ,pid ,remark ,bearingCapacityMoment, bearingCapacityDay, bearingCapacityMax,  floor_sum,total_area,can_rent_area,rent_area,vacancy_area,inviting_area,supporting_area,enteprise_num,url_3d, sort , center, main_view, play, `range`,hlStatus, createTime ,updateTime
+		) VALUES
+		<foreach item="o" collection="list"  separator="," >
+			(#{o.id}, #{o.name},#{code}, #{o.pid}, #{o.remark}, #{bearingCapacityMoment}, #{bearingCapacityDay}, #{bearingCapacityMax} ,#{floorSum},#{totalArea},#{canRentArea},#{rentArea}, #{vacancyArea}, #{invitingArea},#{supportingArea},#{entepriseNum},#{url3d},#{o.sort},#{center},#{mainView},#{play},#{range},#{hlStatus}, #{o.createTime}, #{o.updateTime} )
+		</foreach>
+	</insert>
+
+	<!-- 修改 -->
+	<update id="update" parameterType="DimTourBasArea">
+		UPDATE dim_tour_bas_area
+		SET
+		<if test="name != null and name!='' ">name = #{name},</if>
+		<if test="code != null and code!='' ">code = #{code}, </if>
+		<if test="pid != null and pid!='' ">pid = #{pid},</if>
+		<if test="remark != null and remark!='' ">remark = #{remark},</if>
+		<if test="bearingCapacityMoment != null and bearingCapacityMoment!='' ">bearingCapacityMoment = #{bearingCapacityMoment},</if>
+		<if test="bearingCapacityDay != null and bearingCapacityDay!='' ">bearingCapacityDay = #{bearingCapacityDay},</if>
+		<if test="bearingCapacityMax != null and bearingCapacityMax!='' ">bearingCapacityMax = #{bearingCapacityMax},</if>
+		<if test="floorSum != null and floorSum!='' ">floor_sum = #{floorSum},</if>
+		<if test="totalArea != null and totalArea!='' ">total_area = #{totalArea},</if>
+		<if test="canRentArea != null and canRentArea!='' ">can_rent_area = #{canRentArea},</if>
+		<if test="rentArea != null and rentArea!='' ">rent_area = #{rentArea},</if>
+		<if test="vacancyArea != null and vacancyArea!='' ">vacancy_area = #{vacancyArea}, </if>
+		<if test="invitingArea != null and invitingArea!='' ">inviting_area = #{invitingArea}, </if>
+		<if test="supportingArea != null and supportingArea !='' ">supporting_area = #{supportingArea},</if>
+		<if test="entepriseNum != null and entepriseNum !='' ">enteprise_num = #{entepriseNum},</if>
+		<if test="url3d != null and url3d!='' ">url_3d = #{url3d},</if>
+		<if test="sort != null and sort !='' ">sort = #{sort},</if>
+		<if test="center != null and center !='' ">center  = #{center}, </if>
+		<if test="mainView != null and mainView!='' ">main_view  = #{mainView}, </if>
+		<if test="play != null and play!='' ">play = #{play},</if>
+		<if test="range != null and range !='' ">`range` = #{range}, </if>
+		<if test="hlStatus != null and hlStatus !='' ">hlStatus = #{hlStatus}, </if>
+		updateTime = #{updateTime}
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="DimTourBasArea">
+	DELETE FROM dim_tour_bas_area  
+	WHERE id=#{id}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatch" parameterType ="java.util.List">
+	DELETE FROM dim_tour_bas_area WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+#{o.id}		</foreach>
+		)
+	</delete>
+	
+	<select id="findBySql" parameterType="string" resultMap="base">${sql}</select>
+
+    <select id="updateBySql" parameterType="string" resultType="java.lang.Integer">${sql}</select>
+    
+    <select id="findObjBySql" parameterType="string" resultType="java.lang.Object">${sql}</select>
+</mapper>

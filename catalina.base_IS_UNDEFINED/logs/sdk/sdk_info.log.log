@@ -1,0 +1,665 @@
+.2019-06-05 17:48:45.702 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 11732 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-06-05 17:48:45.705 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-06-05 17:48:46.088 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Wed Jun 05 17:48:46 CST 2019]; root of context hierarchy
+.2019-06-05 17:48:46.262 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-06-05 17:48:48.744 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-06-05 17:48:48.753 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-06-05 17:48:48.754 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-06-05 17:48:48.849 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-06-05 17:48:48.849 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 2761 ms
+.2019-06-05 17:48:49.056 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-06-05 17:48:49.057 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-06-05 17:48:49.060 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-06-05 17:48:49.060 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-06-05 17:48:49.060 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-06-05 17:48:49.060 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-06-05 17:48:49.060 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-06-05 17:48:49.911 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Wed Jun 05 17:48:46 CST 2019]; root of context hierarchy
+.2019-06-05 17:48:50.057 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-06-05 17:48:50.057 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-06-05 17:48:50.078 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-05 17:48:50.078 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-05 17:48:50.108 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-05 17:48:50.475 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-06-05 17:48:50.476 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-06-05 17:48:50.480 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-06-05 17:48:50.493 org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor INFO - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+.2019-06-05 17:48:50.501 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-06-05 17:48:50.509 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-06-05 17:48:50.517 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-06-05 17:48:50.529 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-06-05 17:48:50.533 com.winter.DemoApplication INFO - Started DemoApplication in 5.418 seconds (JVM running for 7.134)
+.2019-06-24 16:47:16.204 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 1008 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-06-24 16:47:16.207 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-06-24 16:47:16.674 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Mon Jun 24 16:47:16 CST 2019]; root of context hierarchy
+.2019-06-24 16:47:16.857 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-06-24 16:47:18.365 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-06-24 16:47:18.373 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-06-24 16:47:18.374 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-06-24 16:47:18.447 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-06-24 16:47:18.447 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1773 ms
+.2019-06-24 16:47:18.683 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-06-24 16:47:18.684 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-06-24 16:47:18.688 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-06-24 16:47:18.688 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-06-24 16:47:18.689 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-06-24 16:47:18.689 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-06-24 16:47:18.689 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-06-24 16:47:19.549 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Mon Jun 24 16:47:16 CST 2019]; root of context hierarchy
+.2019-06-24 16:47:19.704 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-06-24 16:47:19.705 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-06-24 16:47:19.705 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-06-24 16:47:19.705 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-06-24 16:47:19.707 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-06-24 16:47:19.707 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-06-24 16:47:19.728 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-24 16:47:19.728 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-24 16:47:19.757 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-24 16:47:20.116 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-06-24 16:47:20.117 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-06-24 16:47:20.121 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-06-24 16:47:20.134 org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor INFO - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+.2019-06-24 16:47:20.142 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-06-24 16:47:20.152 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-06-24 16:47:20.166 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-06-24 16:47:20.184 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-06-24 16:47:20.190 com.winter.DemoApplication INFO - Started DemoApplication in 4.682 seconds (JVM running for 5.843)
+.2019-06-24 16:47:48.439 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 11308 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-06-24 16:47:48.442 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-06-24 16:47:48.789 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b7a5baa: startup date [Mon Jun 24 16:47:48 CST 2019]; root of context hierarchy
+.2019-06-24 16:47:48.942 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-06-24 16:47:50.416 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-06-24 16:47:50.423 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-06-24 16:47:50.424 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-06-24 16:47:50.495 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-06-24 16:47:50.495 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1706 ms
+.2019-06-24 16:47:50.689 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-06-24 16:47:50.690 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-06-24 16:47:50.692 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-06-24 16:47:50.693 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-06-24 16:47:50.693 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-06-24 16:47:50.693 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-06-24 16:47:50.693 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-06-24 16:47:51.532 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b7a5baa: startup date [Mon Jun 24 16:47:48 CST 2019]; root of context hierarchy
+.2019-06-24 16:47:51.682 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-06-24 16:47:51.683 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-06-24 16:47:51.684 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-06-24 16:47:51.684 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-06-24 16:47:51.686 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-06-24 16:47:51.686 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-06-24 16:47:51.709 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-24 16:47:51.709 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-24 16:47:51.737 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-24 16:47:52.093 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-06-24 16:47:52.094 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-06-24 16:47:52.098 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-06-24 16:47:52.116 org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor INFO - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+.2019-06-24 16:47:52.126 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-06-24 16:47:52.138 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-06-24 16:47:52.148 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-06-24 16:47:52.168 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-06-24 16:47:52.172 com.winter.DemoApplication INFO - Started DemoApplication in 4.275 seconds (JVM running for 5.049)
+.2019-06-24 16:50:09.304 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 10828 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-06-24 16:50:09.307 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-06-24 16:50:09.722 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Mon Jun 24 16:50:09 CST 2019]; root of context hierarchy
+.2019-06-24 16:50:09.804 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-06-24 16:50:11.467 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-06-24 16:50:11.474 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-06-24 16:50:11.475 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-06-24 16:50:11.550 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-06-24 16:50:11.550 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1828 ms
+.2019-06-24 16:50:11.724 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-06-24 16:50:11.725 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-06-24 16:50:11.727 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-06-24 16:50:11.727 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-06-24 16:50:11.727 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-06-24 16:50:11.727 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-06-24 16:50:11.728 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-06-24 16:50:12.591 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Mon Jun 24 16:50:09 CST 2019]; root of context hierarchy
+.2019-06-24 16:50:12.746 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-06-24 16:50:12.748 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-06-24 16:50:12.748 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-06-24 16:50:12.748 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-06-24 16:50:12.750 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-06-24 16:50:12.750 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-06-24 16:50:12.772 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-24 16:50:12.773 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-24 16:50:12.801 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-06-24 16:50:13.169 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-06-24 16:50:13.171 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-06-24 16:50:13.176 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-06-24 16:50:13.190 org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor INFO - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+.2019-06-24 16:50:13.198 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-06-24 16:50:13.207 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-06-24 16:50:13.219 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-06-24 16:50:13.238 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-06-24 16:50:13.244 com.winter.DemoApplication INFO - Started DemoApplication in 4.51 seconds (JVM running for 5.347)
+.2019-07-01 17:47:50.800 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 11532 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-07-01 17:47:50.804 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-07-01 17:47:51.329 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@776aec5c: startup date [Mon Jul 01 17:47:51 CST 2019]; root of context hierarchy
+.2019-07-01 17:47:51.563 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-07-01 17:47:53.289 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-07-01 17:47:53.299 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-07-01 17:47:53.300 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-07-01 17:47:53.392 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-07-01 17:47:53.393 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 2064 ms
+.2019-07-01 17:47:53.583 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-07-01 17:47:53.584 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-07-01 17:47:53.586 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-07-01 17:47:53.586 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-07-01 17:47:53.587 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-07-01 17:47:53.587 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-07-01 17:47:53.587 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-07-01 17:47:55.191 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@776aec5c: startup date [Mon Jul 01 17:47:51 CST 2019]; root of context hierarchy
+.2019-07-01 17:47:55.364 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-07-01 17:47:55.365 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-07-01 17:47:55.365 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-07-01 17:47:55.366 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-07-01 17:47:55.366 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/sendWarning]}" onto public java.lang.String com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning()
+.2019-07-01 17:47:55.368 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-07-01 17:47:55.368 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-07-01 17:47:55.391 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:47:55.392 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:47:55.423 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:47:55.836 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-07-01 17:47:55.837 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-07-01 17:47:55.841 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-07-01 17:47:55.856 org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor INFO - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+.2019-07-01 17:47:55.864 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:47:55.881 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:47:55.908 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-07-01 17:47:55.937 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-07-01 17:47:55.942 com.winter.DemoApplication INFO - Started DemoApplication in 6.112 seconds (JVM running for 7.949)
+.2019-07-01 17:48:52.151 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 10204 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-07-01 17:48:52.154 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-07-01 17:48:52.604 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b7a5baa: startup date [Mon Jul 01 17:48:52 CST 2019]; root of context hierarchy
+.2019-07-01 17:48:52.679 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-07-01 17:48:54.293 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-07-01 17:48:54.302 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-07-01 17:48:54.304 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-07-01 17:48:54.400 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-07-01 17:48:54.401 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1797 ms
+.2019-07-01 17:48:54.731 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-07-01 17:48:54.733 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-07-01 17:48:54.735 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-07-01 17:48:54.735 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-07-01 17:48:54.735 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-07-01 17:48:54.735 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-07-01 17:48:54.735 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-07-01 17:48:55.753 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b7a5baa: startup date [Mon Jul 01 17:48:52 CST 2019]; root of context hierarchy
+.2019-07-01 17:48:55.927 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-07-01 17:48:55.928 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-07-01 17:48:55.928 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-07-01 17:48:55.929 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-07-01 17:48:55.929 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/sendWarning]}" onto public java.lang.String com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning()
+.2019-07-01 17:48:55.934 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-07-01 17:48:55.935 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-07-01 17:48:55.959 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:48:55.959 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:48:56.000 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:48:56.493 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-07-01 17:48:56.495 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-07-01 17:48:56.510 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-07-01 17:48:56.542 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:48:56.554 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:48:56.567 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-07-01 17:48:56.584 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-07-01 17:48:56.589 com.winter.DemoApplication INFO - Started DemoApplication in 5.003 seconds (JVM running for 5.845)
+.2019-07-01 17:49:49.594 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring FrameworkServlet 'dispatcherServlet'
+.2019-07-01 17:49:49.594 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization started
+.2019-07-01 17:49:49.620 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+.2019-07-01 17:53:29.185 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 7352 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-07-01 17:53:29.189 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-07-01 17:53:29.569 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b7a5baa: startup date [Mon Jul 01 17:53:29 CST 2019]; root of context hierarchy
+.2019-07-01 17:53:30.035 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-07-01 17:53:31.835 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-07-01 17:53:31.843 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-07-01 17:53:31.843 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-07-01 17:53:31.930 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-07-01 17:53:31.930 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 2361 ms
+.2019-07-01 17:53:32.100 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-07-01 17:53:32.101 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-07-01 17:53:32.104 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-07-01 17:53:32.104 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-07-01 17:53:32.104 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-07-01 17:53:32.104 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-07-01 17:53:32.104 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-07-01 17:53:32.994 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b7a5baa: startup date [Mon Jul 01 17:53:29 CST 2019]; root of context hierarchy
+.2019-07-01 17:53:33.148 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-07-01 17:53:33.149 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-07-01 17:53:33.150 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-07-01 17:53:33.150 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-07-01 17:53:33.150 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/sendWarning]}" onto public java.lang.String com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning()
+.2019-07-01 17:53:33.153 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-07-01 17:53:33.154 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-07-01 17:53:33.176 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:53:33.176 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:53:33.209 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:53:33.593 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-07-01 17:53:33.594 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-07-01 17:53:33.598 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-07-01 17:53:33.615 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:53:33.624 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:53:33.632 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-07-01 17:53:33.645 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-07-01 17:53:33.649 com.winter.DemoApplication INFO - Started DemoApplication in 5.367 seconds (JVM running for 6.264)
+.2019-07-01 17:53:36.029 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring FrameworkServlet 'dispatcherServlet'
+.2019-07-01 17:53:36.029 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization started
+.2019-07-01 17:53:36.053 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
+.2019-07-01 17:56:43.389 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 4448 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-07-01 17:56:43.396 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-07-01 17:56:43.742 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b7a5baa: startup date [Mon Jul 01 17:56:43 CST 2019]; root of context hierarchy
+.2019-07-01 17:56:43.873 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-07-01 17:56:45.925 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-07-01 17:56:45.934 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-07-01 17:56:45.934 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-07-01 17:56:46.007 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-07-01 17:56:46.007 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 2265 ms
+.2019-07-01 17:56:46.184 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-07-01 17:56:46.185 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-07-01 17:56:46.187 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-07-01 17:56:46.187 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-07-01 17:56:46.188 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-07-01 17:56:46.188 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-07-01 17:56:46.188 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-07-01 17:56:47.164 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b7a5baa: startup date [Mon Jul 01 17:56:43 CST 2019]; root of context hierarchy
+.2019-07-01 17:56:47.366 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-07-01 17:56:47.368 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-07-01 17:56:47.369 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-07-01 17:56:47.369 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-07-01 17:56:47.369 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/sendWarning]}" onto public java.lang.String com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning()
+.2019-07-01 17:56:47.373 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-07-01 17:56:47.374 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-07-01 17:56:47.414 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:56:47.414 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:56:47.473 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:56:47.931 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-07-01 17:56:47.932 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-07-01 17:56:47.936 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-07-01 17:56:47.953 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:56:47.960 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:56:47.969 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-07-01 17:56:47.981 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-07-01 17:56:47.985 com.winter.DemoApplication INFO - Started DemoApplication in 5.262 seconds (JVM running for 6.201)
+.2019-07-01 17:56:48.889 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring FrameworkServlet 'dispatcherServlet'
+.2019-07-01 17:56:48.890 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization started
+.2019-07-01 17:56:48.909 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+.2019-07-01 17:58:06.520 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 10908 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-07-01 17:58:06.523 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-07-01 17:58:06.910 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b7a5baa: startup date [Mon Jul 01 17:58:06 CST 2019]; root of context hierarchy
+.2019-07-01 17:58:06.992 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-07-01 17:58:08.637 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-07-01 17:58:08.647 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-07-01 17:58:08.648 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-07-01 17:58:08.727 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-07-01 17:58:08.728 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1818 ms
+.2019-07-01 17:58:08.920 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-07-01 17:58:08.922 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-07-01 17:58:08.924 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-07-01 17:58:08.925 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-07-01 17:58:08.925 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-07-01 17:58:08.925 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-07-01 17:58:08.925 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-07-01 17:58:09.976 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b7a5baa: startup date [Mon Jul 01 17:58:06 CST 2019]; root of context hierarchy
+.2019-07-01 17:58:10.151 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-07-01 17:58:10.152 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-07-01 17:58:10.152 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-07-01 17:58:10.152 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-07-01 17:58:10.153 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/sendWarning]}" onto public java.lang.String com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning()
+.2019-07-01 17:58:10.158 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-07-01 17:58:10.159 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-07-01 17:58:10.184 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:58:10.184 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:58:10.216 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:58:10.619 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-07-01 17:58:10.621 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-07-01 17:58:10.627 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-07-01 17:58:10.646 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:58:10.653 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:58:10.662 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-07-01 17:58:10.675 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-07-01 17:58:10.679 com.winter.DemoApplication INFO - Started DemoApplication in 4.723 seconds (JVM running for 5.582)
+.2019-07-01 17:58:10.823 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring FrameworkServlet 'dispatcherServlet'
+.2019-07-01 17:58:10.823 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization started
+.2019-07-01 17:58:10.842 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+.2019-07-01 17:59:02.220 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 11744 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-07-01 17:59:02.224 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-07-01 17:59:02.879 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Mon Jul 01 17:59:02 CST 2019]; root of context hierarchy
+.2019-07-01 17:59:03.044 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-07-01 17:59:04.547 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-07-01 17:59:04.554 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-07-01 17:59:04.555 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-07-01 17:59:04.622 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-07-01 17:59:04.622 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1743 ms
+.2019-07-01 17:59:04.791 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-07-01 17:59:04.792 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-07-01 17:59:04.795 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-07-01 17:59:04.795 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-07-01 17:59:04.795 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-07-01 17:59:04.795 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-07-01 17:59:04.795 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-07-01 17:59:05.746 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Mon Jul 01 17:59:02 CST 2019]; root of context hierarchy
+.2019-07-01 17:59:05.920 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-07-01 17:59:05.921 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-07-01 17:59:05.922 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-07-01 17:59:05.922 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-07-01 17:59:05.923 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/sendWarning]}" onto public java.lang.String com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning()
+.2019-07-01 17:59:05.925 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-07-01 17:59:05.926 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-07-01 17:59:05.954 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:59:05.954 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:59:05.992 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 17:59:06.387 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-07-01 17:59:06.388 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-07-01 17:59:06.394 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-07-01 17:59:06.413 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:59:06.420 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-07-01 17:59:06.428 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-07-01 17:59:06.441 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-07-01 17:59:06.444 com.winter.DemoApplication INFO - Started DemoApplication in 4.735 seconds (JVM running for 5.552)
+.2019-07-01 17:59:12.086 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring FrameworkServlet 'dispatcherServlet'
+.2019-07-01 17:59:12.086 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization started
+.2019-07-01 17:59:12.108 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+.2019-07-01 18:00:31.773 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 11828 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-07-01 18:00:31.777 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-07-01 18:00:32.138 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Mon Jul 01 18:00:32 CST 2019]; root of context hierarchy
+.2019-07-01 18:00:32.293 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-07-01 18:00:33.935 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-07-01 18:00:33.942 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-07-01 18:00:33.943 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-07-01 18:00:34.011 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-07-01 18:00:34.011 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1873 ms
+.2019-07-01 18:00:34.181 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-07-01 18:00:34.182 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-07-01 18:00:34.185 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-07-01 18:00:34.185 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-07-01 18:00:34.185 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-07-01 18:00:34.186 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-07-01 18:00:34.186 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-07-01 18:00:35.028 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Mon Jul 01 18:00:32 CST 2019]; root of context hierarchy
+.2019-07-01 18:00:35.171 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-07-01 18:00:35.172 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-07-01 18:00:35.172 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-07-01 18:00:35.172 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-07-01 18:00:35.173 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/sendWarning]}" onto public java.lang.String com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning()
+.2019-07-01 18:00:35.175 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-07-01 18:00:35.176 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-07-01 18:00:35.196 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 18:00:35.196 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 18:00:35.237 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 18:00:35.641 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-07-01 18:00:35.642 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-07-01 18:00:35.646 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-07-01 18:00:35.664 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-07-01 18:00:35.670 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-07-01 18:00:35.679 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-07-01 18:00:35.692 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-07-01 18:00:35.695 com.winter.DemoApplication INFO - Started DemoApplication in 4.758 seconds (JVM running for 5.981)
+.2019-07-01 18:00:46.614 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring FrameworkServlet 'dispatcherServlet'
+.2019-07-01 18:00:46.614 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization started
+.2019-07-01 18:00:46.632 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+.2019-07-01 18:01:22.975 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 12124 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-07-01 18:01:22.978 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-07-01 18:01:23.308 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47f4e407: startup date [Mon Jul 01 18:01:23 CST 2019]; root of context hierarchy
+.2019-07-01 18:01:23.394 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-07-01 18:01:25.343 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-07-01 18:01:25.352 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-07-01 18:01:25.353 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-07-01 18:01:25.442 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-07-01 18:01:25.442 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 2138 ms
+.2019-07-01 18:01:25.685 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-07-01 18:01:25.687 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-07-01 18:01:25.690 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-07-01 18:01:25.690 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-07-01 18:01:25.690 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-07-01 18:01:25.690 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-07-01 18:01:25.690 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-07-01 18:01:27.791 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47f4e407: startup date [Mon Jul 01 18:01:23 CST 2019]; root of context hierarchy
+.2019-07-01 18:01:28.001 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-07-01 18:01:28.003 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-07-01 18:01:28.003 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-07-01 18:01:28.003 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-07-01 18:01:28.004 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/sendWarning]}" onto public java.lang.String com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning()
+.2019-07-01 18:01:28.008 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-07-01 18:01:28.008 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-07-01 18:01:28.050 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 18:01:28.050 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 18:01:28.104 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 18:01:29.104 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-07-01 18:01:29.106 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-07-01 18:01:29.113 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-07-01 18:01:29.143 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-07-01 18:01:29.157 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-07-01 18:01:29.187 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-07-01 18:01:29.208 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-07-01 18:01:29.216 com.winter.DemoApplication INFO - Started DemoApplication in 7.409 seconds (JVM running for 10.289)
+.2019-07-01 18:01:29.614 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring FrameworkServlet 'dispatcherServlet'
+.2019-07-01 18:01:29.614 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization started
+.2019-07-01 18:01:29.642 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization completed in 28 ms
+.2019-07-01 18:01:45.576 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] ERROR - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: connect in progress] with root cause
+java.lang.IllegalStateException: connect in progress
+	at sun.net.www.protocol.http.HttpURLConnection.setRequestMethod(HttpURLConnection.java:550)
+	at com.winter.common.HttpRequest.doPost(HttpRequest.java:81)
+	at com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning(dwdParkOptDevcEventInfoController.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+.2019-07-01 18:02:09.165 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] ERROR - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: connect in progress] with root cause
+java.lang.IllegalStateException: connect in progress
+	at sun.net.www.protocol.http.HttpURLConnection.setRequestMethod(HttpURLConnection.java:550)
+	at com.winter.common.HttpRequest.doPost(HttpRequest.java:81)
+	at com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning(dwdParkOptDevcEventInfoController.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+.2019-07-01 18:03:15.004 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] ERROR - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: connect in progress] with root cause
+java.lang.IllegalStateException: connect in progress
+	at sun.net.www.protocol.http.HttpURLConnection.setRequestMethod(HttpURLConnection.java:550)
+	at com.winter.common.HttpRequest.doPost(HttpRequest.java:81)
+	at com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning(dwdParkOptDevcEventInfoController.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+.2019-07-01 18:45:51.683 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47f4e407: startup date [Mon Jul 01 18:01:23 CST 2019]; root of context hierarchy
+.2019-07-01 18:45:51.706 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Unregistering JMX-exposed beans on shutdown
+.2019-07-01 18:45:51.707 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Unregistering JMX-exposed beans
+.2019-07-01 18:46:01.489 com.winter.DemoApplication INFO - Starting DemoApplication on SC-201903231742 with PID 11376 (H:\IDEAworkspace\trunk\target\classes started by Administrator in H:\IDEAworkspace\trunk)
+.2019-07-01 18:46:01.492 com.winter.DemoApplication INFO - No active profile set, falling back to default profiles: default
+.2019-07-01 18:46:01.929 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Mon Jul 01 18:46:01 CST 2019]; root of context hierarchy
+.2019-07-01 18:46:02.229 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.5.Final
+.2019-07-01 18:46:03.633 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 8071 (http)
+.2019-07-01 18:46:03.641 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-07-01 18:46:03.641 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.16
+.2019-07-01 18:46:03.711 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-07-01 18:46:03.711 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1782 ms
+.2019-07-01 18:46:04.060 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-07-01 18:46:04.062 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'statViewServlet' to [/druid/*]
+.2019-07-01 18:46:04.065 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-07-01 18:46:04.065 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-07-01 18:46:04.065 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-07-01 18:46:04.066 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-07-01 18:46:04.066 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'webStatFilter' to urls: [/*]
+.2019-07-01 18:46:05.199 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bf0d49: startup date [Mon Jul 01 18:46:01 CST 2019]; root of context hierarchy
+.2019-07-01 18:46:05.345 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventRcv]}" onto public void com.winter.Controller.DimTourDevcVideoSurveillanceController.eventRcv(com.winter.model.HikEventRcv)
+.2019-07-01 18:46:05.346 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventUnSubscriptionByEventTypes]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventUnSubscriptionByEventTypes(int)
+.2019-07-01 18:46:05.346 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionByEventTypes],methods=[POST]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionByEventTypes(int)
+.2019-07-01 18:46:05.346 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/eventSubscriptionView]}" onto public java.lang.String com.winter.Controller.DimTourDevcVideoSurveillanceController.eventSubscriptionView()
+.2019-07-01 18:46:05.346 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/sendWarning]}" onto public java.lang.String com.winter.Controller.dwdParkOptDevcEventInfoController.sendWarning()
+.2019-07-01 18:46:05.349 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-07-01 18:46:05.349 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-07-01 18:46:05.375 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 18:46:05.375 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 18:46:05.407 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-07-01 18:46:05.807 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-07-01 18:46:05.808 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Bean with name 'dataSource' has been autodetected for JMX exposure
+.2019-07-01 18:46:05.812 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+.2019-07-01 18:46:05.864 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-8071"]
+.2019-07-01 18:46:05.890 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-8071"]
+.2019-07-01 18:46:05.906 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-07-01 18:46:05.936 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 8071 (http)
+.2019-07-01 18:46:05.952 com.winter.DemoApplication INFO - Started DemoApplication in 5.275 seconds (JVM running for 6.375)
+.2019-07-01 18:46:13.462 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring FrameworkServlet 'dispatcherServlet'
+.2019-07-01 18:46:13.462 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization started
+.2019-07-01 18:46:13.485 org.springframework.web.servlet.DispatcherServlet INFO - FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms

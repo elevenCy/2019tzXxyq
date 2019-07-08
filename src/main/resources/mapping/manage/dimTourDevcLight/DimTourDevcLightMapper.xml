@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winter.mapper.manage.dimTourDevcLight.DimTourDevcLightDao">
+	<!-- com.hqt1af.entity.manage.DimTourDevcLight -->
+ 	<resultMap id="base" type="DimTourDevcLight" >
+	     <result column="id" property="id" jdbcType="CHAR"/>
+	     <result column="resourceId" property="resourceId" jdbcType="CHAR"/>
+	     <result column="resourceId_3d" property="resourceId3d" jdbcType="CHAR"/>
+	     <result column="name" property="name" jdbcType="CHAR"/>
+	     <result column="eqid" property="eqid" jdbcType="CHAR"/>
+	     <result column="eqno" property="eqno" jdbcType="CHAR"/>
+	     <result column="eqcode" property="eqcode" jdbcType="CHAR"/>
+	     <result column="type" property="type" jdbcType="CHAR"/>
+	     <result column="addr" property="addr" jdbcType="CHAR"/>
+	     <result column="status" property="status" jdbcType="INTEGER"/>
+	     <result column="group" property="group" jdbcType="CHAR"/>
+	     <result column="lon" property="lon" jdbcType="CHAR"/>
+	     <result column="lat" property="lat" jdbcType="CHAR"/>
+	     <result column="hlStatus" property="hlStatus" jdbcType="CHAR"/>
+	     <result column="remark" property="remark" jdbcType="CHAR"/>
+	     <result column="lights" property="lights" jdbcType="LONGVARCHAR"/>
+	     <result column="sort" property="sort" jdbcType="INTEGER"/>
+	     <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+	     <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+ 	</resultMap>
+ 	
+ 	<!-- 查看详情 -->
+ 	<select id="find"  resultMap="base" parameterType="DimTourDevcLight">
+       SELECT t.* FROM dim_tour_devc_light t WHERE 1=1 
+       <if test="id != null and id!='' ">
+        	AND t.id=#{id}
+       </if>
+    </select>
+ 	
+ 	<!-- 列表查询 -->
+ 	<select id="findByPage"  resultMap="base" parameterType="DimTourDevcLight">
+       SELECT t.* FROM dim_tour_devc_light t WHERE 1=1 
+       <if test="param.status!= null">
+        AND t.status=#{param.status}
+       </if>
+       <if test="param.keyWord!=null and param.keyWord!='' ">
+       AND (t.name LIKE CONCAT('%',#{param.keyWord},'%'))
+       </if>
+        ORDER BY t.createTime desc
+    </select>
+    
+ 	<!-- 记录数 -->
+    <select id="count"  resultType="int" parameterType="DimTourDevcLight">
+       SELECT count(*) FROM dim_tour_devc_light t WHERE 1=1 
+    </select>  
+    
+    <!-- 添加 -->      
+ 	<insert id="insert" parameterType="DimTourDevcLight">	
+ 	<![CDATA[
+	INSERT INTO dim_tour_devc_light(
+	id ,resourceId ,resourceId_3d ,name ,eqid ,eqno ,eqcode ,type ,addr ,status ,`group` ,lon ,lat ,hlStatus ,remark ,lights ,sort ,createTime ,updateTime
+	) VALUES (
+	#{id}, #{resourceId}, #{resourceId3d}, #{name}, #{eqid}, #{eqno}, #{eqcode}, #{type}, #{addr}, #{status}, #{group}, #{lon}, #{lat}, #{hlStatus}, #{remark}, #{lights}, #{sort}, #{createTime}, #{updateTime} 
+	)
+	]]>  
+	</insert>
+	
+	<!-- 批量添加 -->      
+ 	<insert id="insertBatch" parameterType="java.util.List">	
+	INSERT INTO dim_tour_devc_light(
+	id ,resourceId ,resourceId_3d ,name ,eqid ,eqno ,eqcode ,type ,addr ,status ,`group` ,lon ,lat ,hlStatus ,remark ,lights ,sort ,createTime ,updateTime
+	) VALUES 
+	<foreach item="o" collection="list"  separator="," >
+	(#{o.id}, #{o.resourceId}, #{o.resourceId3d}, #{o.name}, #{o.eqid}, #{o.eqno}, #{o.eqcode}, #{o.type}, #{o.addr}, #{o.status}, #{o.group}, #{o.lon}, #{o.lat}, #{o.hlStatus}, #{o.remark}, #{o.lights}, #{o.sort}, #{o.createTime}, #{o.updateTime} )
+	</foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="DimTourDevcLight">
+		UPDATE dim_tour_devc_light 
+		SET
+          resourceId = #{resourceId},
+          resourceId_3d = #{resourceId3d},
+          name = #{name},
+          eqid = #{eqid},
+          eqno = #{eqno},
+          eqcode = #{eqcode},
+          type = #{type},
+          addr = #{addr},
+          status = #{status},
+          `group` = #{group},
+          lon = #{lon},
+          lat = #{lat},
+          hlStatus = #{hlStatus},
+          remark = #{remark},
+          lights = #{lights},
+          sort = #{sort},
+          createTime = #{createTime},
+          updateTime = #{updateTime}
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="DimTourDevcLight">
+	DELETE FROM dim_tour_devc_light  
+	WHERE id=#{id}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatch" parameterType ="java.util.List">
+	DELETE FROM dim_tour_devc_light WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+#{o.id}		</foreach>
+		)
+	</delete>
+	
+	<select id="findBySql" parameterType="string" resultMap="base">${sql}</select>
+
+    <select id="updateBySql" parameterType="string" resultType="java.lang.Integer">${sql}</select>
+    
+    <select id="findObjBySql" parameterType="string" resultType="java.lang.Object">${sql}</select>
+</mapper>

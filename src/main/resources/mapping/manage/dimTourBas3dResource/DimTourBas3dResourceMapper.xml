@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winter.mapper.manage.dimTourBas3dResource.DimTourBas3dResourceDao">
+	<!-- com.hqt1af.entity.manage.DimTourBas3dResource -->
+ 	<resultMap id="base" type="DimTourBas3dResource" >
+	     <result column="id" property="id" jdbcType="CHAR"/>
+	     <result column="name" property="name" jdbcType="CHAR"/>
+	     <result column="areaId" property="areaId" jdbcType="CHAR"/>
+	     <result column="typeId" property="typeId" jdbcType="CHAR"/>
+	     <result column="description" property="description" jdbcType="LONGVARCHAR"/>
+	     <result column="img" property="img" jdbcType="CHAR"/>
+	     <result column="img_height" property="imgHeight" jdbcType="INTEGER"/>
+	     <result column="img_width" property="imgWidth" jdbcType="INTEGER"/>
+	     <result column="address" property="address" jdbcType="CHAR"/>
+	     <result column="lon" property="lon" jdbcType="DECIMAL"/>
+	     <result column="lat" property="lat" jdbcType="DECIMAL"/>
+	     <result column="x" property="x" jdbcType="DECIMAL"/>
+	     <result column="y" property="y" jdbcType="DECIMAL"/>
+	     <result column="z" property="z" jdbcType="DECIMAL"/>
+	     <result column="remark" property="remark" jdbcType="CHAR"/>
+	     <result column="sort" property="sort" jdbcType="INTEGER"/>
+	     <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+	     <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+ 	</resultMap>
+ 	
+ 	<!-- 查看详情 -->
+ 	<select id="find"  resultMap="base" parameterType="DimTourBas3dResource">
+       SELECT t.* FROM dim_tour_bas_3d_resource t WHERE 1=1 
+       <if test="id != null and id!='' ">
+        	AND t.id=#{id}
+       </if>
+    </select>
+ 	
+ 	<!-- 列表查询 -->
+ 	<select id="findByPage"  resultMap="base" parameterType="DimTourBas3dResource">
+       SELECT t.* FROM dim_tour_bas_3d_resource t WHERE 1=1 
+       <if test="param.status!= null">
+        AND t.status=#{param.status}
+       </if>
+       <if test="param.keyWord!=null and param.keyWord!='' ">
+       AND (t.name LIKE CONCAT('%',#{param.keyWord},'%'))
+       </if>
+        ORDER BY t.create_time desc
+    </select>
+    
+ 	<!-- 记录数 -->
+    <select id="count"  resultType="int" parameterType="DimTourBas3dResource">
+       SELECT count(*) FROM dim_tour_bas_3d_resource t WHERE 1=1 
+    </select>  
+    
+    <!-- 添加 -->      
+ 	<insert id="insert" parameterType="DimTourBas3dResource">	
+ 	<![CDATA[
+	INSERT INTO dim_tour_bas_3d_resource(
+	id ,name ,areaId ,typeId ,description ,img ,img_height ,img_width ,address ,lon ,lat ,x ,y ,z ,remark ,sort ,createTime ,updateTime 
+	) VALUES (
+	#{id}, #{name}, #{areaId}, #{typeId}, #{description}, #{img}, #{imgHeight}, #{imgWidth}, #{address}, #{lon}, #{lat}, #{x}, #{y}, #{z}, #{remark}, #{sort}, #{createTime}, #{updateTime} 
+	)
+	]]>  
+	</insert>
+	
+	<!-- 批量添加 -->      
+ 	<insert id="insertBatch" parameterType="java.util.List">	
+	INSERT INTO dim_tour_bas_3d_resource(
+	id ,name ,areaId ,typeId ,description ,img ,img_height ,img_width ,address ,lon ,lat ,x ,y ,z ,remark ,sort ,createTime ,updateTime 
+	) VALUES 
+	<foreach item="o" collection="list"  separator="," >
+	(#{o.id}, #{o.name}, #{o.areaId}, #{o.typeId}, #{o.description}, #{o.img}, #{o.imgHeight}, #{o.imgWidth}, #{o.address}, #{o.lon}, #{o.lat}, #{o.x}, #{o.y}, #{o.z}, #{o.remark}, #{o.sort}, #{o.createTime}, #{o.updateTime} )
+	</foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="DimTourBas3dResource">
+		UPDATE dim_tour_bas_3d_resource 
+		SET
+          name = #{name},
+          areaId = #{areaId},
+          typeId = #{typeId},
+          description = #{description},
+          img = #{img},
+          img_height = #{imgHeight},
+          img_width = #{imgWidth},
+          address = #{address},
+          lon = #{lon},
+          lat = #{lat},
+          x = #{x},
+          y = #{y},
+          z = #{z},
+          remark = #{remark},
+          sort = #{sort},
+          createTime = #{createTime},
+          updateTime = #{updateTime}
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="DimTourBas3dResource">
+	DELETE FROM dim_tour_bas_3d_resource  
+	WHERE id=#{id}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatch" parameterType ="java.util.List">
+	DELETE FROM dim_tour_bas_3d_resource WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+#{o.id}		</foreach>
+		)
+	</delete>
+	
+	<select id="findBySql" parameterType="string" resultMap="base">${sql}</select>
+
+    <select id="updateBySql" parameterType="string" resultType="java.lang.Integer">${sql}</select>
+    
+    <select id="findObjBySql" parameterType="string" resultType="java.lang.Object">${sql}</select>
+</mapper>

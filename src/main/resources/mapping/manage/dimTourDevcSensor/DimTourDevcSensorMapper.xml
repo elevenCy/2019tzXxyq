@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winter.mapper.manage.dimTourDevcSensor.DimTourDevcSensorDao">
+	<!-- com.hqt1af.entity.manage.DimTourDevcSensor -->
+ 	<resultMap id="base" type="DimTourDevcSensor" >
+	     <result column="id" property="id" jdbcType="CHAR"/>
+	     <result column="resourceId" property="resourceId" jdbcType="CHAR"/>
+	     <result column="resourceId_3d" property="resourceId3d" jdbcType="CHAR"/>
+	     <result column="device_id" property="deviceId" jdbcType="CHAR"/>
+	     <result column="device_no" property="deviceNo" jdbcType="CHAR"/>
+	     <result column="device_name" property="deviceName" jdbcType="CHAR"/>
+	     <result column="device_lat" property="deviceLat" jdbcType="CHAR"/>
+	     <result column="device_lng" property="deviceLng" jdbcType="CHAR"/>
+	     <result column="fault_delay" property="faultDelay" jdbcType="CHAR"/>
+	     <result column="device_ico" property="deviceIco" jdbcType="CHAR"/>
+	     <result column="default_timescale" property="defaultTimescale" jdbcType="CHAR"/>
+	     <result column="create_date_time" property="createDateTime" jdbcType="CHAR"/>
+	     <result column="sensor_id" property="sensorId" jdbcType="CHAR"/>
+	     <result column="sensor_name" property="sensorName" jdbcType="CHAR"/>
+	     <result column="sensor_type" property="sensorType" jdbcType="CHAR"/>
+	     <result column="ioc_url" property="iocUrl" jdbcType="CHAR"/>
+	     <result column="status" property="status" jdbcType="INTEGER"/>
+	     <result column="lat" property="lat" jdbcType="CHAR"/>
+	     <result column="lng" property="lng" jdbcType="CHAR"/>
+	     <result column="switcher" property="switcher" jdbcType="CHAR"/>
+	     <result column="value" property="value" jdbcType="CHAR"/>
+	     <result column="unit" property="unit" jdbcType="CHAR"/>
+	     <result column="update_date_time" property="updateDateTime" jdbcType="CHAR"/>
+	     <result column="remark" property="remark" jdbcType="CHAR"/>
+	     <result column="sort" property="sort" jdbcType="INTEGER"/>
+	     <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+	     <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+ 	</resultMap>
+ 	
+ 	<!-- 查看详情 -->
+ 	<select id="find"  resultMap="base" parameterType="DimTourDevcSensor">
+       SELECT t.* FROM dim_tour_devc_sensor t WHERE 1=1 
+       <if test="id != null and id!='' ">
+        	AND t.id=#{id}
+       </if>
+    </select>
+ 	
+ 	<!-- 列表查询 -->
+ 	<select id="findByPage"  resultMap="base" parameterType="DimTourDevcSensor">
+       SELECT t.* FROM dim_tour_devc_sensor t WHERE 1=1 
+       <if test="param.status!= null">
+        AND t.status=#{param.status}
+       </if>
+       <if test="param.keyWord!=null and param.keyWord!='' ">
+       AND (t.name LIKE CONCAT('%',#{param.keyWord},'%'))
+       </if>
+        ORDER BY t.createTime desc
+    </select>
+    
+ 	<!-- 记录数 -->
+    <select id="count"  resultType="int" parameterType="DimTourDevcSensor">
+       SELECT count(*) FROM dim_tour_devc_sensor t WHERE 1=1 
+    </select>  
+    
+    <!-- 添加 -->      
+ 	<insert id="insert" parameterType="DimTourDevcSensor">	
+ 	<![CDATA[
+	INSERT INTO dim_tour_devc_sensor(
+	id ,resourceId ,resourceId_3d ,device_id ,device_no ,device_name ,device_lat ,device_lng ,fault_delay ,device_ico ,default_timescale ,create_date_time ,sensor_id ,sensor_name ,sensor_type ,ioc_url ,status ,lat ,lng ,switcher ,value ,unit ,update_date_time ,remark ,sort ,createTime ,updateTime 
+	) VALUES (
+	#{id}, #{resourceId}, #{resourceId3d}, #{deviceId}, #{deviceNo}, #{deviceName}, #{deviceLat}, #{deviceLng}, #{faultDelay}, #{deviceIco}, #{defaultTimescale}, #{createDateTime}, #{sensorId}, #{sensorName}, #{sensorType}, #{iocUrl}, #{status}, #{lat}, #{lng}, #{switcher}, #{value}, #{unit}, #{updateDateTime}, #{remark}, #{sort}, #{createTime}, #{updateTime} 
+	)
+	]]>  
+	</insert>
+	
+	<!-- 批量添加 -->      
+ 	<insert id="insertBatch" parameterType="java.util.List">	
+	INSERT INTO dim_tour_devc_sensor(
+	id ,resourceId ,resourceId_3d ,device_id ,device_no ,device_name ,device_lat ,device_lng ,fault_delay ,device_ico ,default_timescale ,create_date_time ,sensor_id ,sensor_name ,sensor_type ,ioc_url ,status ,lat ,lng ,switcher ,value ,unit ,update_date_time ,remark ,sort ,createTime ,updateTime 
+	) VALUES 
+	<foreach item="o" collection="list"  separator="," >
+	(#{o.id}, #{o.resourceId}, #{o.resourceId3d}, #{o.deviceId}, #{o.deviceNo}, #{o.deviceName}, #{o.deviceLat}, #{o.deviceLng}, #{o.faultDelay}, #{o.deviceIco}, #{o.defaultTimescale}, #{o.createDateTime}, #{o.sensorId}, #{o.sensorName}, #{o.sensorType}, #{o.iocUrl}, #{o.status}, #{o.lat}, #{o.lng}, #{o.switcher}, #{o.value}, #{o.unit}, #{o.updateDateTime}, #{o.remark}, #{o.sort}, #{o.createTime}, #{o.updateTime} )
+	</foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="DimTourDevcSensor">
+		UPDATE dim_tour_devc_sensor 
+		SET
+          resourceId = #{resourceId},
+          resourceId_3d = #{resourceId3d},
+          device_id = #{deviceId},
+          device_no = #{deviceNo},
+          device_name = #{deviceName},
+          device_lat = #{deviceLat},
+          device_lng = #{deviceLng},
+          fault_delay = #{faultDelay},
+          device_ico = #{deviceIco},
+          default_timescale = #{defaultTimescale},
+          create_date_time = #{createDateTime},
+          sensor_id = #{sensorId},
+          sensor_name = #{sensorName},
+          sensor_type = #{sensorType},
+          ioc_url = #{iocUrl},
+          status = #{status},
+          lat = #{lat},
+          lng = #{lng},
+          switcher = #{switcher},
+          value = #{value},
+          unit = #{unit},
+          update_date_time = #{updateDateTime},
+          remark = #{remark},
+          sort = #{sort},
+          createTime = #{createTime},
+          updateTime = #{updateTime}
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="DimTourDevcSensor">
+	DELETE FROM dim_tour_devc_sensor  
+	WHERE id=#{id}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatch" parameterType ="java.util.List">
+	DELETE FROM dim_tour_devc_sensor WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+#{o.id}		</foreach>
+		)
+	</delete>
+	
+	<select id="findBySql" parameterType="string" resultMap="base">${sql}</select>
+
+    <select id="updateBySql" parameterType="string" resultType="java.lang.Integer">${sql}</select>
+    
+    <select id="findObjBySql" parameterType="string" resultType="java.lang.Object">${sql}</select>
+</mapper>

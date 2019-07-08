@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winter.mapper.manage.dimParkBasEnterprise.DimParkBasEnterpriseDao">
+	<!-- com.hqt1af.entity.manage.DimParkBasEnterprise -->
+ 	<resultMap id="base" type="DimParkBasEnterprise" >
+	     <result column="id" property="id" jdbcType="VARCHAR"/>
+	     <result column="name" property="name" jdbcType="VARCHAR"/>
+	     <result column="abbreviation" property="abbreviation" jdbcType="VARCHAR"/>
+	     <result column="logo" property="logo" jdbcType="VARCHAR"/>
+	     <result column="code" property="code" jdbcType="VARCHAR"/>
+	     <result column="org_code" property="orgCode" jdbcType="VARCHAR"/>
+	     <result column="org_type" property="orgType" jdbcType="VARCHAR"/>
+	     <result column="primary_service" property="primaryService" jdbcType="VARCHAR"/>
+	     <result column="industry_code" property="industryCode" jdbcType="VARCHAR"/>
+	     <result column="detail_address" property="detailAddress" jdbcType="VARCHAR"/>
+	     <result column="register_address" property="registerAddress" jdbcType="VARCHAR"/>
+	     <result column="area_code" property="areaCode" jdbcType="VARCHAR"/>
+	     <result column="principal" property="principal" jdbcType="VARCHAR"/>
+	     <result column="opening_time" property="openingTime" jdbcType="DATE"/>
+	     <result column="enter_time" property="enterTime" jdbcType="DATE"/>
+	     <result column="registered_no" property="registeredNo" jdbcType="VARCHAR"/>
+	     <result column="national_reg_no" property="nationalRegNo" jdbcType="VARCHAR"/>
+	     <result column="land_reg_no" property="landRegNo" jdbcType="VARCHAR"/>
+	     <result column="source" property="source" jdbcType="VARCHAR"/>
+	     <result column="operate_status" property="operateStatus" jdbcType="VARCHAR"/>
+	     <result column="tel" property="tel" jdbcType="VARCHAR"/>
+	     <result column="phone" property="phone" jdbcType="VARCHAR"/>
+	     <result column="pic" property="pic" jdbcType="LONGVARCHAR"/>
+	     <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+	     <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+ 	</resultMap>
+ 	
+ 	<!-- 查看详情 -->
+ 	<select id="find"  resultMap="base" parameterType="DimParkBasEnterprise">
+       SELECT t.* FROM dim_park_bas_enterprise t WHERE 1=1 
+       <if test="id != null and id!='' ">
+        	AND t.id=#{id}
+       </if>
+    </select>
+ 	
+ 	<!-- 列表查询 -->
+ 	<select id="findByPage"  resultMap="base" parameterType="DimParkBasEnterprise">
+       SELECT t.* FROM dim_park_bas_enterprise t WHERE 1=1 
+       <if test="param.status!= null">
+        AND t.status=#{param.status}
+       </if>
+       <if test="param.keyWord!=null and param.keyWord!='' ">
+       AND (t.name LIKE CONCAT('%',#{param.keyWord},'%'))
+       </if>
+        ORDER BY t.create_time desc
+    </select>
+    
+ 	<!-- 记录数 -->
+    <select id="count"  resultType="int" parameterType="DimParkBasEnterprise">
+       SELECT count(*) FROM dim_park_bas_enterprise t WHERE 1=1 
+    </select>  
+    
+    <!-- 添加 -->      
+ 	<insert id="insert" parameterType="DimParkBasEnterprise">	
+ 	<![CDATA[
+	INSERT INTO dim_park_bas_enterprise(
+	id ,name ,abbreviation ,logo ,code ,org_code ,org_type ,primary_service ,industry_code ,detail_address ,register_address ,area_code ,principal ,opening_time ,enter_time ,registered_no ,national_reg_no ,land_reg_no ,source ,operate_status ,tel ,phone ,pic ,createTime ,updateTime 
+	) VALUES (
+	#{id}, #{name}, #{abbreviation}, #{logo}, #{code}, #{orgCode}, #{orgType}, #{primaryService}, #{industryCode}, #{detailAddress}, #{registerAddress}, #{areaCode}, #{principal}, #{openingTime}, #{enterTime}, #{registeredNo}, #{nationalRegNo}, #{landRegNo}, #{source}, #{operateStatus}, #{tel}, #{phone}, #{pic}, #{createTime}, #{updateTime} 
+	)
+	]]>  
+	</insert>
+	
+	<!-- 批量添加 -->      
+ 	<insert id="insertBatch" parameterType="java.util.List">	
+	INSERT INTO dim_park_bas_enterprise(
+	id ,name ,abbreviation ,logo ,code ,org_code ,org_type ,primary_service ,industry_code ,detail_address ,register_address ,area_code ,principal ,opening_time ,enter_time ,registered_no ,national_reg_no ,land_reg_no ,source ,operate_status ,tel ,phone ,pic ,createTime ,updateTime 
+	) VALUES 
+	<foreach item="o" collection="list"  separator="," >
+	(#{o.id}, #{o.name}, #{o.abbreviation}, #{o.logo}, #{o.code}, #{o.orgCode}, #{o.orgType}, #{o.primaryService}, #{o.industryCode}, #{o.detailAddress}, #{o.registerAddress}, #{o.areaCode}, #{o.principal}, #{o.openingTime}, #{o.enterTime}, #{o.registeredNo}, #{o.nationalRegNo}, #{o.landRegNo}, #{o.source}, #{o.operateStatus}, #{o.tel}, #{o.phone}, #{o.pic}, #{o.createTime}, #{o.updateTime} )
+	</foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="DimParkBasEnterprise">
+		UPDATE dim_park_bas_enterprise 
+		SET
+          name = #{name},
+          abbreviation = #{abbreviation},
+          logo = #{logo},
+          code = #{code},
+          org_code = #{orgCode},
+          org_type = #{orgType},
+          primary_service = #{primaryService},
+          industry_code = #{industryCode},
+          detail_address = #{detailAddress},
+          register_address = #{registerAddress},
+          area_code = #{areaCode},
+          principal = #{principal},
+          opening_time = #{openingTime},
+          enter_time = #{enterTime},
+          registered_no = #{registeredNo},
+          national_reg_no = #{nationalRegNo},
+          land_reg_no = #{landRegNo},
+          source = #{source},
+          operate_status = #{operateStatus},
+          tel = #{tel},
+          phone = #{phone},
+          pic = #{pic},
+          createTime = #{createTime},
+          updateTime = #{updateTime}
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="DimParkBasEnterprise">
+	DELETE FROM dim_park_bas_enterprise  
+	WHERE id=#{id}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatch" parameterType ="java.util.List">
+	DELETE FROM dim_park_bas_enterprise WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+#{o.id}		</foreach>
+		)
+	</delete>
+	
+	<select id="findBySql" parameterType="string" resultMap="base">${sql}</select>
+
+    <select id="updateBySql" parameterType="string" resultType="java.lang.Integer">${sql}</select>
+    
+    <select id="findObjBySql" parameterType="string" resultType="java.lang.Object">${sql}</select>
+</mapper>

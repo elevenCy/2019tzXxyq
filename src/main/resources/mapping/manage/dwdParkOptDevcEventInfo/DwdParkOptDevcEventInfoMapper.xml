@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winter.mapper.manage.dwdParkOptDevcEventInfo.DwdParkOptDevcEventInfoDao">
+	<!-- com.hqt1af.entity.manage.DwdParkOptDevcEventInfo -->
+ 	<resultMap id="base" type="DwdParkOptDevcEventInfo" >
+	     <result column="id" property="id" jdbcType="CHAR"/>
+	     <result column="name" property="name" jdbcType="CHAR"/>
+	     <result column="info" property="info" jdbcType="CHAR"/>
+	     <result column="warning" property="warning" jdbcType="CHAR"/>
+	     <result column="content" property="content" jdbcType="LONGVARCHAR"/>
+	     <result column="type" property="type" jdbcType="CHAR"/>
+	     <result column="level" property="level" jdbcType="CHAR"/>
+	     <result column="status" property="status" jdbcType="CHAR"/>
+	     <result column="relevanceId" property="relevanceId" jdbcType="CHAR"/>
+	     <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+	     <result column="happenTime" property="happenTime" jdbcType="TIMESTAMP"/>
+	     <result column="resolveTime" property="resolveTime" jdbcType="TIMESTAMP"/>
+	     <result column="solutionTime" property="solutionTime" jdbcType="TIMESTAMP"/>
+ 	</resultMap>
+ 	
+ 	<!-- 查看详情 -->
+ 	<select id="find"  resultMap="base" parameterType="DwdParkOptDevcEventInfo">
+       SELECT t.* FROM dwd_park_opt_devc_event_info t WHERE 1=1 
+       <if test="id != null and id!='' ">
+        	AND t.id=#{id}
+       </if>
+		<if test="warning != null and warning!='' ">
+			AND t.warning=#{warning}
+		</if>
+       <if test="status != null and status!='' ">
+        	AND t.status=#{status}
+       </if>
+		<if test="relevanceId != null and relevanceId!='' ">
+			AND t.relevanceId=#{relevanceId}
+		</if>
+		<if test="type != null and type!='' ">
+			AND t.type=#{type}
+		</if>
+       <if test="happenTime != null and happenTime != ''">
+       		<![CDATA[ and t.happenTime >= DATE_FORMAT(#{param.happenTime,jdbcType=DATE},'yyyy-MM-dd hh24:mi:ss')]]>
+       </if>
+         ORDER BY t.happenTime desc
+    </select>
+ 	
+ 	<!-- 列表查询 -->
+ 	<select id="findByPage"  resultMap="base" parameterType="DwdParkOptDevcEventInfo">
+       SELECT t.* FROM dwd_park_opt_devc_event_info t WHERE 1=1 
+       <if test="param.status!= null">
+        AND t.status=#{param.status}
+       </if>
+       <if test="param.keyWord!=null and param.keyWord!='' ">
+       AND (t.name LIKE CONCAT('%',#{param.keyWord},'%'))
+       </if>
+       <if test="param.happenTime != null and param.happenTime != ''">
+            <![CDATA[ and t.happenTime >= DATE_FORMAT(#{param.happenTime,jdbcType=DATE},'yyyy-MM-dd hh24:mi:ss')]]>
+        </if>
+        ORDER BY t.createTime desc
+    </select>
+    
+ 	<!-- 记录数 -->
+    <select id="count"  resultType="int" parameterType="DwdParkOptDevcEventInfo">
+       SELECT count(*) FROM dwd_park_opt_devc_event_info t WHERE 1=1 
+       <if test="status != null and status!='' ">
+        	AND t.status=#{status}
+       </if>
+    </select>  
+    
+    <!-- 添加 -->      
+ 	<insert id="insert" parameterType="DwdParkOptDevcEventInfo">	
+ 	<![CDATA[
+	INSERT INTO dwd_park_opt_devc_event_info(
+	id ,name ,info ,warning ,content ,type ,level ,status ,relevanceId ,createTime ,happenTime ,resolveTime ,solutionTime 
+	) VALUES (
+	#{id}, #{name}, #{info}, #{warning}, #{content}, #{type}, #{level}, #{status}, #{relevanceId}, #{createTime}, #{happenTime}, #{resolveTime}, #{solutionTime} 
+	)
+	]]>  
+	</insert>
+	
+	<!-- 批量添加 -->      
+ 	<insert id="insertBatch" parameterType="java.util.List">	
+	INSERT INTO dwd_park_opt_devc_event_info(
+	id ,name ,info ,warning ,content ,type ,level ,status ,relevanceId ,createTime ,happenTime ,resolveTime ,solutionTime 
+	) VALUES 
+	<foreach item="o" collection="list"  separator="," >
+	(#{o.id}, #{o.name}, #{o.info}, #{o.warning}, #{o.content}, #{o.type}, #{o.level}, #{o.status}, #{o.relevanceId}, #{o.createTime}, #{o.happenTime}, #{o.resolveTime}, #{o.solutionTime} )
+	</foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="DwdParkOptDevcEventInfo">
+		UPDATE dwd_park_opt_devc_event_info 
+		SET
+		 <trim prefix="set" suffixOverrides=",">
+          <if test="name != null and name !='' ">name = #{name},</if>
+          <if test="info != null and info !='' ">info = #{info},</if>
+          <if test="warning != null and warning !='' ">warning = #{warning},</if>
+          <if test="content != null and content !='' ">content = #{content},</if>
+          <if test="type != null and type !='' ">type = #{type},</if>
+          <if test="level != null and level !='' ">level = #{level},</if>
+          <if test="status != null and status !='' ">status = #{status},</if>
+          <if test="relevanceId != null and relevanceId !='' ">relevanceId = #{relevanceId},</if>
+          <if test="happenTime != null and happenTime !='' ">happenTime = #{happenTime},</if>
+          <if test="resolveTime != null and resolveTime !='' ">resolveTime = #{resolveTime},</if>
+          <if test="resolveTime != null and resolveTime !='' "> solutionTime = #{solutionTime},</if>
+         </trim>
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="DwdParkOptDevcEventInfo">
+	DELETE FROM dwd_park_opt_devc_event_info  
+	WHERE id=#{id}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatch" parameterType ="java.util.List">
+	DELETE FROM dwd_park_opt_devc_event_info WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+#{o.id}		</foreach>
+		)
+	</delete>
+	
+	<select id="findBySql" parameterType="string" resultMap="base">${sql}</select>
+
+    <select id="updateBySql" parameterType="string" resultType="java.lang.Integer">${sql}</select>
+    
+    <select id="findObjBySql" parameterType="string" resultType="java.lang.Object">${sql}</select>
+</mapper>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winter.mapper.manage.dimTourDevcVideoSurveillance.DimTourDevcVideoSurveillanceDao">
+	<!-- com.hqt1af.entity.manage.DimTourDevcVideoSurveillance -->
+ 	<resultMap id="base" type="DimTourDevcVideoSurveillance" >
+	     <result column="id" property="id" jdbcType="CHAR"/>
+	     <result column="resourceId" property="resourceId" jdbcType="CHAR"/>
+	     <result column="resourceId_3d" property="resourceId3d" jdbcType="CHAR"/>
+	     <result column="name" property="name" jdbcType="CHAR"/>
+	     <result column="code" property="code" jdbcType="CHAR"/>
+	     <result column="ip" property="ip" jdbcType="CHAR"/>
+	     <result column="port" property="port" jdbcType="CHAR"/>
+	     <result column="channel" property="channel" jdbcType="CHAR"/>
+	     <result column="password" property="password" jdbcType="CHAR"/>
+	     <result column="macAddress" property="macAddress" jdbcType="CHAR"/>
+	     <result column="status" property="status" jdbcType="INTEGER"/>
+	     <result column="type" property="type" jdbcType="CHAR"/>
+	     <result column="remark" property="remark" jdbcType="CHAR"/>
+	     <result column="sort" property="sort" jdbcType="INTEGER"/>
+	     <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+	     <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+ 	</resultMap>
+ 	
+ 	<!-- 查看详情 -->
+ 	<select id="find"  resultMap="base" parameterType="DimTourDevcVideoSurveillance">
+       SELECT t.* FROM dim_tour_devc_video_surveillance t WHERE 1=1 
+       <if test="id != null and id!='' ">
+        	AND t.id=#{id}
+       </if>
+    </select>
+ 	
+ 	<!-- 列表查询 -->
+ 	<select id="findByPage"  resultMap="base" parameterType="DimTourDevcVideoSurveillance">
+       SELECT t.* FROM dim_tour_devc_video_surveillance t WHERE 1=1 
+       <if test="param.status!= null">
+        AND t.status=#{param.status}
+       </if>
+       <if test="param.keyWord!=null and param.keyWord!='' ">
+       AND (t.name LIKE CONCAT('%',#{param.keyWord},'%'))
+       </if>
+        ORDER BY t.create_time desc
+    </select>
+    
+ 	<!-- 记录数 -->
+    <select id="count"  resultType="int" parameterType="DimTourDevcVideoSurveillance">
+       SELECT count(*) FROM dim_tour_devc_video_surveillance t WHERE 1=1 
+    </select>  
+    
+    <!-- 添加 -->      
+ 	<insert id="insert" parameterType="DimTourDevcVideoSurveillance">	
+ 	<![CDATA[
+	INSERT INTO dim_tour_devc_video_surveillance(
+	id ,resourceId ,resourceId_3d ,name ,code ,ip ,port ,channel ,password ,macAddress ,status ,type ,remark ,sort ,createTime ,updateTime 
+	) VALUES (
+	#{id}, #{resourceId}, #{resourceId3d}, #{name}, #{code}, #{ip}, #{port}, #{channel}, #{password}, #{macAddress}, #{status}, #{type}, #{remark}, #{sort}, #{createTime}, #{updateTime} 
+	)
+	]]>  
+	</insert>
+	
+	<!-- 批量添加 -->      
+ 	<insert id="insertBatch" parameterType="java.util.List">	
+	INSERT INTO dim_tour_devc_video_surveillance(
+	id ,resourceId ,resourceId_3d ,name ,code ,ip ,port ,channel ,password ,macAddress ,status ,type ,remark ,sort ,createTime ,updateTime 
+	) VALUES 
+	<foreach item="o" collection="list"  separator="," >
+	(#{o.id}, #{o.resourceId}, #{o.resourceId3d}, #{o.name}, #{o.code}, #{o.ip}, #{o.port}, #{o.channel}, #{o.password}, #{o.macAddress}, #{o.status}, #{o.type}, #{o.remark}, #{o.sort}, #{o.createTime}, #{o.updateTime} )
+	</foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="DimTourDevcVideoSurveillance">
+		UPDATE dim_tour_devc_video_surveillance 
+		SET
+          resourceId = #{resourceId},
+          resourceId_3d = #{resourceId3d},
+          name = #{name},
+          code = #{code},
+          ip = #{ip},
+          port = #{port},
+          channel = #{channel},
+          password = #{password},
+          macAddress = #{macAddress},
+          status = #{status},
+          type = #{type},
+          remark = #{remark},
+          sort = #{sort},
+          createTime = #{createTime},
+          updateTime = #{updateTime}
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="DimTourDevcVideoSurveillance">
+	DELETE FROM dim_tour_devc_video_surveillance  
+	WHERE id=#{id}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatch" parameterType ="java.util.List">
+	DELETE FROM dim_tour_devc_video_surveillance WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+#{o.id}		</foreach>
+		)
+	</delete>
+	
+	<select id="findBySql" parameterType="string" resultMap="base">${sql}</select>
+
+    <select id="updateBySql" parameterType="string" resultType="java.lang.Integer">${sql}</select>
+    
+    <select id="findObjBySql" parameterType="string" resultType="java.lang.Object">${sql}</select>
+</mapper>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winter.mapper.manage.dimParkBasAgreement.DimParkBasAgreementDao">
+	<!-- com.hqt1af.entity.manage.DimParkBasAgreement -->
+ 	<resultMap id="base" type="DimParkBasAgreement" >
+	     <result column="id" property="id" jdbcType="VARCHAR"/>
+	     <result column="enterprise_id" property="enterpriseId" jdbcType="VARCHAR"/>
+	     <result column="rent_price" property="rentPrice" jdbcType="DECIMAL"/>
+	     <result column="rent_y" property="rentY" jdbcType="DECIMAL"/>
+	     <result column="property_price" property="propertyPrice" jdbcType="DECIMAL"/>
+	     <result column="property_y" property="propertyY" jdbcType="DECIMAL"/>
+	     <result column="area" property="area" jdbcType="DECIMAL"/>
+	     <result column="start_date" property="startDate" jdbcType="DATE"/>
+	     <result column="end_date" property="endDate" jdbcType="DATE"/>
+	     <result column="payment" property="payment" jdbcType="INTEGER"/>
+	     <result column="pay_endtime" property="payEndtime" jdbcType="DATE"/>
+	     <result column="status" property="status" jdbcType="INTEGER"/>
+	     <result column="remark" property="remark" jdbcType="VARCHAR"/>
+	     <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+	     <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+ 	</resultMap>
+ 	
+ 	<!-- 查看详情 -->
+ 	<select id="find"  resultMap="base" parameterType="DimParkBasAgreement">
+       SELECT t.* FROM dim_park_bas_agreement t WHERE 1=1 
+       <if test="id != null and id!='' ">
+        	AND t.id=#{id}
+       </if>
+		<if test="enterpriseId != null and enterpriseId!='' ">
+			AND t.enterprise_id=#{enterpriseId}
+		</if>
+    </select>
+ 	
+ 	<!-- 列表查询 -->
+ 	<select id="findByPage"  resultMap="base" parameterType="DimParkBasAgreement">
+       SELECT t.* FROM dim_park_bas_agreement t WHERE 1=1 
+       <if test="param.status!= null">
+        AND t.status=#{param.status}
+       </if>
+       <if test="param.keyWord!=null and param.keyWord!='' ">
+       AND (t.name LIKE CONCAT('%',#{param.keyWord},'%'))
+       </if>
+        ORDER BY t.create_time desc
+    </select>
+    
+ 	<!-- 记录数 -->
+    <select id="count"  resultType="int" parameterType="DimParkBasAgreement">
+       SELECT count(*) FROM dim_park_bas_agreement t WHERE 1=1 
+    </select>  
+    
+    <!-- 添加 -->      
+ 	<insert id="insert" parameterType="DimParkBasAgreement">	
+ 	<![CDATA[
+	INSERT INTO dim_park_bas_agreement(
+	id ,enterprise_id ,rent_price ,rent_y ,property_price ,property_y ,area ,start_date ,end_date ,payment ,pay_endtime ,status ,remark ,createTime ,updateTime 
+	) VALUES (
+	#{id}, #{enterpriseId}, #{rentPrice}, #{rentY}, #{propertyPrice}, #{propertyY}, #{area}, #{startDate}, #{endDate}, #{payment}, #{payEndtime}, #{status}, #{remark}, #{createTime}, #{updateTime} 
+	)
+	]]>  
+	</insert>
+	
+	<!-- 批量添加 -->      
+ 	<insert id="insertBatch" parameterType="java.util.List">	
+	INSERT INTO dim_park_bas_agreement(
+	id ,enterprise_id ,rent_price ,rent_y ,property_price ,property_y ,area ,start_date ,end_date ,payment ,pay_endtime ,status ,remark ,createTime ,updateTime 
+	) VALUES 
+	<foreach item="o" collection="list"  separator="," >
+	(#{o.id}, #{o.enterpriseId}, #{o.rentPrice}, #{o.rentY}, #{o.propertyPrice}, #{o.propertyY}, #{o.area}, #{o.startDate}, #{o.endDate}, #{o.payment}, #{o.payEndtime}, #{o.status}, #{o.remark}, #{o.createTime}, #{o.updateTime} )
+	</foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="DimParkBasAgreement">
+		UPDATE dim_park_bas_agreement 
+		SET
+          enterprise_id = #{enterpriseId},
+          rent_price = #{rentPrice},
+          rent_y = #{rentY},
+          property_price = #{propertyPrice},
+          property_y = #{propertyY},
+          area = #{area},
+          start_date = #{startDate},
+          end_date = #{endDate},
+          payment = #{payment},
+          pay_endtime = #{payEndtime},
+          status = #{status},
+          remark = #{remark},
+          createTime = #{createTime},
+          updateTime = #{updateTime}
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="DimParkBasAgreement">
+	DELETE FROM dim_park_bas_agreement  
+	WHERE id=#{id}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatch" parameterType ="java.util.List">
+	DELETE FROM dim_park_bas_agreement WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+#{o.id}		</foreach>
+		)
+	</delete>
+	
+	<select id="findBySql" parameterType="string" resultMap="base">${sql}</select>
+
+    <select id="updateBySql" parameterType="string" resultType="java.lang.Integer">${sql}</select>
+    
+    <select id="findObjBySql" parameterType="string" resultType="java.lang.Object">${sql}</select>
+</mapper>
