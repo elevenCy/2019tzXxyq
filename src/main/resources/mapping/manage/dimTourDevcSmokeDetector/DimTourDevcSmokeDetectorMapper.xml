@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winter.mapper.manage.dimTourDevcSmokeDetector.DimTourDevcSmokeDetectorDao">
+	<!-- com.hqt1af.entity.manage.DimTourDevcSmokeDetector -->
+ 	<resultMap id="base" type="DimTourDevcSmokeDetector" >
+	     <result column="id" property="id" jdbcType="CHAR"/>
+	     <result column="resourceId" property="resourceId" jdbcType="CHAR"/>
+	     <result column="resourceId_3d" property="resourceId3d" jdbcType="CHAR"/>
+	     <result column="rz_protection_data_id" property="rzProtectionDataId" jdbcType="CHAR"/>
+	     <result column="name" property="name" jdbcType="CHAR"/>
+	     <result column="code" property="code" jdbcType="CHAR"/>
+	     <result column="ip" property="ip" jdbcType="CHAR"/>
+	     <result column="port" property="port" jdbcType="CHAR"/>
+	     <result column="address" property="address" jdbcType="CHAR"/>
+	     <result column="status" property="status" jdbcType="INTEGER"/>
+	     <result column="remark" property="remark" jdbcType="CHAR"/>
+	     <result column="sort" property="sort" jdbcType="INTEGER"/>
+	     <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+	     <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+ 	</resultMap>
+
+ 	<!-- 查看详情 -->
+ 	<select id="find"  resultMap="base" parameterType="DimTourDevcSmokeDetector">
+       SELECT t.* FROM dim_tour_devc_smoke_detector t WHERE 1=1 
+       <if test="id != null and id!='' ">
+        	AND t.id=#{id}
+       </if>
+    </select>
+ 	
+ 	<!-- 列表查询 -->
+ 	<select id="findByPage"  resultMap="base" parameterType="DimTourDevcSmokeDetector">
+       SELECT t.* FROM dim_tour_devc_smoke_detector t WHERE 1=1 
+       <if test="param.status!= null">
+        AND t.status=#{param.status}
+       </if>
+       <if test="param.keyWord!=null and param.keyWord!='' ">
+       AND (t.name LIKE CONCAT('%',#{param.keyWord},'%'))
+       </if>
+        ORDER BY t.create_time desc
+    </select>
+    
+ 	<!-- 记录数 -->
+    <select id="count"  resultType="int" parameterType="DimTourDevcSmokeDetector">
+       SELECT count(*) FROM dim_tour_devc_smoke_detector t WHERE 1=1 
+    </select>  
+    
+    <!-- 添加 -->      
+ 	<insert id="insert" parameterType="DimTourDevcSmokeDetector">	
+ 	<![CDATA[
+	INSERT INTO dim_tour_devc_smoke_detector(
+	id ,resourceId ,resourceId_3d ,rz_protection_data_id ,name ,code ,ip ,port ,address ,status ,remark ,sort ,createTime ,updateTime 
+	) VALUES (
+	#{id}, #{resourceId}, #{resourceId3d}, #{rzProtectionDataId}, #{name}, #{code}, #{ip}, #{port}, #{address}, #{status}, #{remark}, #{sort}, #{createTime}, #{updateTime} 
+	)
+	]]>  
+	</insert>
+	
+	<!-- 批量添加 -->      
+ 	<insert id="insertBatch" parameterType="java.util.List">	
+	INSERT INTO dim_tour_devc_smoke_detector(
+	id ,resourceId ,resourceId_3d ,rz_protection_data_id ,name ,code ,ip ,port ,address ,status ,remark ,sort ,createTime ,updateTime 
+	) VALUES 
+	<foreach item="o" collection="list"  separator="," >
+	(#{o.id}, #{o.resourceId}, #{o.resourceId3d}, #{o.rzProtectionDataId}, #{o.name}, #{o.code}, #{o.ip}, #{o.port}, #{o.address}, #{o.status}, #{o.remark}, #{o.sort}, #{o.createTime}, #{o.updateTime} )
+	</foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="DimTourDevcSmokeDetector">
+		UPDATE dim_tour_devc_smoke_detector 
+		SET
+          resourceId = #{resourceId},
+          resourceId_3d = #{resourceId3d},
+          rz_protection_data_id = #{rzProtectionDataId},
+          name = #{name},
+          code = #{code},
+          ip = #{ip},
+          port = #{port},
+          address = #{address},
+          status = #{status},
+          remark = #{remark},
+          sort = #{sort},
+          createTime = #{createTime},
+          updateTime = #{updateTime}
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="DimTourDevcSmokeDetector">
+	DELETE FROM dim_tour_devc_smoke_detector  
+	WHERE id=#{id}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatch" parameterType ="java.util.List">
+	DELETE FROM dim_tour_devc_smoke_detector WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+#{o.id}		</foreach>
+		)
+	</delete>
+	
+	<select id="findBySql" parameterType="string" resultMap="base">${sql}</select>
+
+    <select id="updateBySql" parameterType="string" resultType="java.lang.Integer">${sql}</select>
+    
+    <select id="findObjBySql" parameterType="string" resultType="java.lang.Object">${sql}</select>
+</mapper>

@@ -6,13 +6,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.hikvision.artemis.sdk.ArtemisHttpUtil;
 import com.hikvision.artemis.sdk.config.ArtemisConfig;
-import com.winter.common.Ping;
-import com.winter.common.UuidUtil;
-import com.winter.model.manage.dimTourBas3dResource.DimTourBas3dResource;
-import com.winter.model.manage.dimTourBasResource.DimTourBasResource;
 import com.winter.model.manage.dimTourDevcVideoSurveillance.DimTourDevcVideoSurveillance;
-import com.winter.model.manage.dwdParkOptDevcEventInfo.DwdParkOptDevcEventInfo;
-import com.winter.model.manage.dwdParkOptDevcEventInfoHistory.DwdParkOptDevcEventInfoHistory;
 import com.winter.service.manage.dimTourBas3dResource.DimTourBas3dResourceService;
 import com.winter.service.manage.dimTourBasArea.DimTourBasAreaService;
 import com.winter.service.manage.dimTourBasResource.DimTourBasResourceService;
@@ -63,7 +57,7 @@ public class DimTourDevcVideoSurveillanceCompoent {
 
 //    private static final String PREVIEWURLS = "/api/video/v1/cameras/previewURLs";
     //照明设备
-    @Scheduled(fixedRate=30000)
+    @Scheduled(fixedRate=360000)
     public void requestList(){
         ArtemisConfig.host = "111.1.24.130:443";
         ArtemisConfig.appKey = "24828082";
@@ -153,75 +147,6 @@ public class DimTourDevcVideoSurveillanceCompoent {
                 if(dimTourDevcVideoSurveillances!=null&&!dimTourDevcVideoSurveillances.isEmpty()){
                     o = dimTourDevcVideoSurveillances.get(0);
                     insertOrUpdateDevc(1,o,name,indexCode,isOnline,cameraType);
-                    if(o.getResourceId()!=null&&!o.getResourceId().equals("")){//查找到2d点位
-                        DimTourBasResource dimTourBasResource = new DimTourBasResource();
-                        dimTourBasResource.setId(o.getResourceId());
-                        List<DimTourBasResource> dimTourBasResources = dimTourBasResourceService.find(dimTourBasResource);
-                        if(dimTourBasResources!=null&&!dimTourBasResources.isEmpty()){
-                            dimTourBasResource = dimTourBasResources.get(0);
-                            System.out.println(">>>>>>>>>>>>设备已有2d点位>>>>>>>>>>>>获取设备2d点位信息:"+dimTourBasResource.getName());//设备离线则形成一个离线/故障事件存储到运行事件
-                            DwdParkOptDevcEventInfo dwdParkOptDevcEventInfo = new DwdParkOptDevcEventInfo();
-                            dwdParkOptDevcEventInfo.setRelevanceId(dimTourBasResource.getId());//2维 区域报警 所以存储的是关联id字段存的是二维点位id
-                            dwdParkOptDevcEventInfo.setType("2");//2视频 2维点位事件
-                            dwdParkOptDevcEventInfo.setWarning("0");//0离线 2报警 3火灾 4周界告警   因为周界告警与离线告警若是同一个设备的话需要检索对应的时间进行闭环
-                            List<DwdParkOptDevcEventInfo> dwdParkOptDevcEventInfos= dwdParkOptDevcEventInfoService.find(dwdParkOptDevcEventInfo);
-                            if(dwdParkOptDevcEventInfos!=null&&!dwdParkOptDevcEventInfos.isEmpty()){
-                                System.out.println(">>>>>>>>>>>>设备事件已存在>>>>>>>>>>>>获取设备2d点位信息:"+dimTourBasResource.getName());
-                                dwdParkOptDevcEventInfo = dwdParkOptDevcEventInfos.get(0);
-                                if(isOnline==1){//恢复正常 所以将事件闭环 将事件加到完成事件中
-                                    System.out.println(">>>>>>>>>>>>设备恢复正常>>>>>>>>>>>>在info中删除该事件");
-                                    dwdParkOptDevcEventInfoService.delete(dwdParkOptDevcEventInfo);//在info表中删除
-                                    insertEventOver(dwdParkOptDevcEventInfo);
-                                }
-                            }else{
-                                System.out.println(">>>>>>>>>>>>设备事件不存在>>>>>>>>>>>>获取设备2d点位信息:"+dimTourBasResource.getName());
-                                if(isOnline!=1){
-                                    String eventName = dimTourBasResource.getName()+"离线";
-                                    String address = dimTourBasResource.getAddress();
-                                    String warining = ""+isOnline;
-                                    String content = dimTourBasResource.getAddress()+"-"+dimTourBasResource.getName()+":离线";
-                                    insertEvent(dwdParkOptDevcEventInfo,eventName,address,warining,content,"2","0");
-                                }
-                            }
-                        }else{
-                            System.out.println(">>>>>>>>>>>>设备暂无点位>>>>>>>>>>>>点位被删除");
-                        }
-                    }else if(o.getResourceId3d()!=null&&!o.getResourceId3d().equals("")){
-                        DimTourBas3dResource dimTourBas3dResource = new DimTourBas3dResource();
-                        dimTourBas3dResource.setId(o.getResourceId3d());
-                        List<DimTourBas3dResource> dimTourBas3dResources = dimTourBas3dResourceService.find(dimTourBas3dResource);
-                        if(o.getResourceId()!=null&&!o.getResourceId().equals("")) {//查找到3d点位
-                            dimTourBas3dResource = dimTourBas3dResources.get(0);
-                            System.out.println(">>>>>>>>>>>>设备已有3d点位>>>>>>>>>>>>获取设备3d点位信息:"+dimTourBas3dResource.getName());//设备离线则形成一个离线/故障事件存储到运行事件
-                            DwdParkOptDevcEventInfo dwdParkOptDevcEventInfo = new DwdParkOptDevcEventInfo();
-                            dwdParkOptDevcEventInfo.setRelevanceId(dimTourBas3dResource.getId());//2维 区域报警 所以存储的是关联id字段存的是二维点位id
-                            dwdParkOptDevcEventInfo.setType("3");//2视频 2维点位事件
-                            dwdParkOptDevcEventInfo.setWarning("0");//0离线 2报警 3火灾 4周界告警   因为周界告警与离线告警若是同一个设备的话需要检索对应的时间进行闭环
-                            List<DwdParkOptDevcEventInfo> dwdParkOptDevcEventInfos= dwdParkOptDevcEventInfoService.find(dwdParkOptDevcEventInfo);
-                            if(dwdParkOptDevcEventInfos!=null&&!dwdParkOptDevcEventInfos.isEmpty()){
-                                System.out.println(">>>>>>>>>>>>设备事件已存在>>>>>>>>>>>>获取设备3d点位信息:"+dimTourBas3dResource.getName());
-                                dwdParkOptDevcEventInfo = dwdParkOptDevcEventInfos.get(0);
-                                if(isOnline==1){//恢复正常 所以将事件闭环 将事件加到完成事件中
-                                    System.out.println(">>>>>>>>>>>>设备恢复正常>>>>>>>>>>>>在info中删除该事件");
-                                    dwdParkOptDevcEventInfoService.delete(dwdParkOptDevcEventInfo);//在info表中删除
-                                    insertEventOver(dwdParkOptDevcEventInfo);
-                                }
-                            }else{
-                                System.out.println(">>>>>>>>>>>>设备事件不存在>>>>>>>>>>>>获取设备3d点位信息:"+dimTourBas3dResource.getName());
-                                if(isOnline!=1){
-                                    String eventName = dimTourBas3dResource.getName()+"离线";
-                                    String address = dimTourBas3dResource.getAddress();
-                                    String warining = ""+isOnline;
-                                    String content = dimTourBas3dResource.getAddress()+"-"+dimTourBas3dResource.getName()+":离线";
-                                    insertEvent(dwdParkOptDevcEventInfo,eventName,address,warining,content,"2","0");
-                                }
-                            }
-                        }else{
-                            System.out.println(">>>>>>>>>>>>设备暂无点位>>>>>>>>>>>>点位被删除");
-                        }
-                    }else{
-                        System.out.println(">>>>>>>>>>>>设备暂无点位");
-                    }
                 }else{
                     insertOrUpdateDevc(0,o,name,indexCode,isOnline,cameraType);
                 }
@@ -253,66 +178,66 @@ public class DimTourDevcVideoSurveillanceCompoent {
         o.setUpdateTime(now);
         if(flag==0){
             o.setCreateTime(now);
-            System.out.println("数据库没有记录>>>>>>>>>>>>插入楼宇亮化设备信息:"+name+">>>>>>>>>>>>状态:"+isOnline);
+            System.out.println("数据库没有记录>>>>>>>>>>>>插入视频设备信息:"+name+">>>>>>>>>>>>状态:"+isOnline);
             dimTourDevcVideoSurveillanceService.insert(o);
         }else{
             o.setUpdateTime(now);
-            System.out.println("数据库已有记录>>>>>>>>>>>>更新视频监控设备信息:"+o.getName()+">>>>>>>>>>>>状态:"+isOnline);
+            System.out.println("数据库已有记录>>>>>>>>>>>>更新视频设备信息:"+o.getName()+">>>>>>>>>>>>状态:"+isOnline);
             dimTourDevcVideoSurveillanceService.update(o);
         }
     }
-    private void insertEvent(DwdParkOptDevcEventInfo o,String name,String info,String waring,String content,String level,String status){
-        Date now = new Date();
-        o.setName(name);
-        o.setInfo(info);//地址
-        o.setWarning(waring);
-        o.setContent(content);
-        o.setLevel(level);//一般
-        o.setStatus(status);//未处理
-        o.setCreateTime(new Date());
-        o.setHappenTime(new Date());
-        o.setId(UuidUtil.get32UUID());
-        dwdParkOptDevcEventInfoService.insert(o);
-    }
-    private void insertEventOver(DwdParkOptDevcEventInfo o){
-        DwdParkOptDevcEventInfoHistory dwdParkOptDevcEventInfoHistory = new DwdParkOptDevcEventInfoHistory();
-        dwdParkOptDevcEventInfoHistory.setId(o.getId());
-        dwdParkOptDevcEventInfoHistory.setName(o.getName());
-        dwdParkOptDevcEventInfoHistory.setInfo(o.getInfo());
-        dwdParkOptDevcEventInfoHistory.setWarning(o.getWarning());
-        dwdParkOptDevcEventInfoHistory.setType(o.getType());
-        dwdParkOptDevcEventInfoHistory.setLevel(o.getLevel());
-        dwdParkOptDevcEventInfoHistory.setStatus(o.getStatus());
-        dwdParkOptDevcEventInfoHistory.setRelevanceId(o.getRelevanceId());
-        dwdParkOptDevcEventInfoHistory.setCreateTime(o.getCreateTime());
-        dwdParkOptDevcEventInfoHistory.setHappenTime(o.getHappenTime());
-        dwdParkOptDevcEventInfoHistory.setResolveTime(o.getResolveTime());
-        dwdParkOptDevcEventInfoHistory.setSolutionTime(new Date());
-
-        System.out.println(">>>>>>>>>>>>设备恢复正常>>>>>>>>>>>>将事件加入到历史表中");
-        dwdParkOptDevcEventInfoHistoryService.insert(dwdParkOptDevcEventInfoHistory);//加入到历史记录表中
-    }
-
-    /*****ping视频设备是否在线****/
-    public void checkVideo(){
-        DimTourDevcVideoSurveillance o = new DimTourDevcVideoSurveillance();
-        List<DimTourDevcVideoSurveillance> dimTourDevcVideoSurveillances = dimTourDevcVideoSurveillanceService.find(o);
-        for(DimTourDevcVideoSurveillance dimTourDevcVideoSurveillance:dimTourDevcVideoSurveillances){
-            String ip = dimTourDevcVideoSurveillance.getIp();
-            if(ip!=null&&!ip.equals("")){
-                try {
-                    if(Ping.ping(ip)){
-                        dimTourDevcVideoSurveillance.setStatus(1);
-                    }else{
-                        dimTourDevcVideoSurveillance.setStatus(0);
-                    }
-                } catch (Exception ex) {
-                    dimTourDevcVideoSurveillance.setStatus(0);
-                }
-            }else{
-                dimTourDevcVideoSurveillance.setStatus(0);
-            }
-            dimTourDevcVideoSurveillanceService.update(o);
-        }
-    }
+//    private void insertEvent(DwdParkOptDevcEventInfo o,String name,String info,String waring,String content,String level,String status){
+//        Date now = new Date();
+//        o.setName(name);
+//        o.setInfo(info);//地址
+//        o.setWarning(waring);
+//        o.setContent(content);
+//        o.setLevel(level);//一般
+//        o.setStatus(status);//未处理
+//        o.setCreateTime(new Date());
+//        o.setHappenTime(new Date());
+//        o.setId(UuidUtil.get32UUID());
+//        dwdParkOptDevcEventInfoService.insert(o);
+//    }
+//    private void insertEventOver(DwdParkOptDevcEventInfo o){
+//        DwdParkOptDevcEventInfoHistory dwdParkOptDevcEventInfoHistory = new DwdParkOptDevcEventInfoHistory();
+//        dwdParkOptDevcEventInfoHistory.setId(o.getId());
+//        dwdParkOptDevcEventInfoHistory.setName(o.getName());
+//        dwdParkOptDevcEventInfoHistory.setInfo(o.getInfo());
+//        dwdParkOptDevcEventInfoHistory.setWarning(o.getWarning());
+//        dwdParkOptDevcEventInfoHistory.setType(o.getType());
+//        dwdParkOptDevcEventInfoHistory.setLevel(o.getLevel());
+//        dwdParkOptDevcEventInfoHistory.setStatus(o.getStatus());
+//        dwdParkOptDevcEventInfoHistory.setRelevanceId(o.getRelevanceId());
+//        dwdParkOptDevcEventInfoHistory.setCreateTime(o.getCreateTime());
+//        dwdParkOptDevcEventInfoHistory.setHappenTime(o.getHappenTime());
+//        dwdParkOptDevcEventInfoHistory.setResolveTime(o.getResolveTime());
+//        dwdParkOptDevcEventInfoHistory.setSolutionTime(new Date());
+//
+//        System.out.println(">>>>>>>>>>>>设备恢复正常>>>>>>>>>>>>将事件加入到历史表中");
+//        dwdParkOptDevcEventInfoHistoryService.insert(dwdParkOptDevcEventInfoHistory);//加入到历史记录表中
+//    }
+//
+//    /*****ping视频设备是否在线****/
+//    public void checkVideo(){
+//        DimTourDevcVideoSurveillance o = new DimTourDevcVideoSurveillance();
+//        List<DimTourDevcVideoSurveillance> dimTourDevcVideoSurveillances = dimTourDevcVideoSurveillanceService.find(o);
+//        for(DimTourDevcVideoSurveillance dimTourDevcVideoSurveillance:dimTourDevcVideoSurveillances){
+//            String ip = dimTourDevcVideoSurveillance.getIp();
+//            if(ip!=null&&!ip.equals("")){
+//                try {
+//                    if(Ping.ping(ip)){
+//                        dimTourDevcVideoSurveillance.setStatus(1);
+//                    }else{
+//                        dimTourDevcVideoSurveillance.setStatus(0);
+//                    }
+//                } catch (Exception ex) {
+//                    dimTourDevcVideoSurveillance.setStatus(0);
+//                }
+//            }else{
+//                dimTourDevcVideoSurveillance.setStatus(0);
+//            }
+//            dimTourDevcVideoSurveillanceService.update(o);
+//        }
+//    }
 }
