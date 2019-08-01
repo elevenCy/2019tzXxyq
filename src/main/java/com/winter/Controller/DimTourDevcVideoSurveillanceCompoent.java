@@ -16,6 +16,7 @@ import com.winter.service.manage.dwdParkOptDevcEventInfoHistory.DwdParkOptDevcEv
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -55,8 +56,8 @@ public class DimTourDevcVideoSurveillanceCompoent {
     private static final String FIND_CAMERA_INFO_PAGE_BY_TREENODE = "/api/common/v1/remoteControlUnitRestService/findCameraInfoPageByTreeNode";//此接口用来获取所有视频数据。
 
 //    private static final String PREVIEWURLS = "/api/video/v1/cameras/previewURLs";
-    //照明设备
-//    @Scheduled(fixedRate=360000)
+    //视频设备 12 分钟
+    @Scheduled(fixedRate=720000)
     public void requestList(){
         ArtemisConfig.host = "111.1.24.130:443";
         ArtemisConfig.appKey = "24828082";

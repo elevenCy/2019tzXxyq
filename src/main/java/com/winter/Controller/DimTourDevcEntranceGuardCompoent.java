@@ -8,7 +8,6 @@ import com.hikvision.artemis.sdk.config.ArtemisConfig;
 import com.winter.model.manage.dimTourDevcEntranceGuard.DimTourDevcEntranceGuard;
 import com.winter.service.manage.dimTourDevcEntranceGuard.DimTourDevcEntranceGuardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -26,9 +25,9 @@ public class DimTourDevcEntranceGuardCompoent {
 
     @Autowired
     private DimTourDevcEntranceGuardService dimTourDevcEntranceGuardService;
-    @Scheduled(fixedRate=480000)
+//    @Scheduled(fixedRate=480000)
     public void requestList(){
-        ArtemisConfig.host = "10.22.253.20:80";
+        ArtemisConfig.host = "10.22.253.20:86";
         ArtemisConfig.appKey = "28325201";
         ArtemisConfig.appSecret  = "mlnirGmRGAGsq29fGLt3";
         final String api = ARTEMIS_PATH + "/api/resource/v1/acsDevice/acsDeviceList";
@@ -123,7 +122,6 @@ public class DimTourDevcEntranceGuardCompoent {
                 dimTourDevcEntranceGuard.setUpdateTime(now);
                 dimTourDevcEntranceGuardService.update(dimTourDevcEntranceGuard);
             }else{
-                dimTourDevcEntranceGuard = localList.get(0);
                 dimTourDevcEntranceGuard.setName(acsDevName);
                 dimTourDevcEntranceGuard.setTypeCode(acsDevTypeDesc);
                 dimTourDevcEntranceGuard.setTypeName(acsDevTypeName);
@@ -142,7 +140,7 @@ public class DimTourDevcEntranceGuardCompoent {
     }
 
     public int checkIsOnline(String ip){
-        ArtemisConfig.host = "10.22.253.20:80";
+        ArtemisConfig.host = "10.22.253.20:86";
         ArtemisConfig.appKey = "28325201";
         ArtemisConfig.appSecret  = "mlnirGmRGAGsq29fGLt3";
         final String api = ARTEMIS_PATH + "/api/nms/v1/online/acs_device/get";

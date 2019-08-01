@@ -3,6 +3,7 @@ package com.winter.Controller;
 import com.winter.model.manage.dimTourDevcSmokeDetector.DimTourDevcSmokeDetector;
 import com.winter.service.manage.dimTourDevcSmokeDetector.DimTourDevcSmokeDetectorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -12,8 +13,8 @@ import java.util.List;
 public class DimTourDevcSmokeDetectorCompoent {
     @Autowired
     private DimTourDevcSmokeDetectorService dimTourDevcSmokeDetectorService;
-    //烟感点位 5*60
-//    @Scheduled(fixedRate=300000)
+    //烟感点位 10*60分钟
+    @Scheduled(fixedRate=600000)
     public void requestList(){
         System.out.println("查询锐志数据库中的烟感设备数据并匹配好状态位");
         String sql = "select t.FDEVICE_UUID as id,t.FDEVICE_NAME as name,t.FPOSITION as address," +

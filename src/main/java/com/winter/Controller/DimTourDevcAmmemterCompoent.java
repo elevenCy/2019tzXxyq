@@ -6,6 +6,7 @@ import com.winter.service.manage.dimTourDevcAmmeter.DimTourDevcAmmeterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -21,8 +22,8 @@ public class DimTourDevcAmmemterCompoent {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private DimTourDevcAmmeterService dimTourDevcAmmeterService;
-    //监控点位
-//    @Scheduled(fixedRate=420000)
+    //监控点位 14*6 84
+    @Scheduled(fixedRate=840000)
     public void requestList(){
         System.out.println("查询锐志数据库中的电表数据并匹配好状态位");
         String sql = "select t.FPOWERDEV_UUID as id,t.FPOWERDEV_NAME as device_name,t.FPOSITION as remark," +
