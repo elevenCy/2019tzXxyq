@@ -117,14 +117,18 @@
 			<version>1.6.1</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>com.artemis</groupId>
 			<artifactId>artemis</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/src/main/resources/jar/artemis-http-client-1.0-SNAPSHOT.jar</systemPath>
+		</dependency>-->
+		<dependency>
+			<groupId>com.artemis</groupId>
+			<artifactId>artemis</artifactId>
+			<version>1.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>

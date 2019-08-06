@@ -8,6 +8,7 @@ import com.hikvision.artemis.sdk.config.ArtemisConfig;
 import com.winter.model.manage.dimTourDevcEntranceGuard.DimTourDevcEntranceGuard;
 import com.winter.service.manage.dimTourDevcEntranceGuard.DimTourDevcEntranceGuardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -18,16 +19,14 @@ import java.util.Map;
 @Component
 public class DimTourDevcEntranceGuardCompoent {
 
-    private static final String IP_TRPE = "http://";
+    private static final String IP_TRPE = "https://";
     private static final String ARTEMIS_PATH  = "/artemis";
-
-    private static final String GET_CAMERAS = "/api/resource/v1/cameras";//此接口用来获取所有视频数据。
 
     @Autowired
     private DimTourDevcEntranceGuardService dimTourDevcEntranceGuardService;
-//    @Scheduled(fixedRate=480000)
+    @Scheduled(fixedRate=480000)
     public void requestList(){
-        ArtemisConfig.host = "10.22.253.20:86";
+        ArtemisConfig.host = "10.22.253.20:446";
         ArtemisConfig.appKey = "28325201";
         ArtemisConfig.appSecret  = "mlnirGmRGAGsq29fGLt3";
         final String api = ARTEMIS_PATH + "/api/resource/v1/acsDevice/acsDeviceList";
@@ -42,7 +41,7 @@ public class DimTourDevcEntranceGuardCompoent {
         jsonBody.put("pageSize", 100);   //此参数非必填
 
         String body = jsonBody.toJSONString();
-        String result = ArtemisHttpUtil.doPostStringArtemis(path, body, null, null, contentType);
+        String result = ArtemisHttpUtil.doPostStringArtemis(path, body, null, null, contentType,null);
         System.out.println("请求路径："+ api + ",请求参数："+ body + ",返回结果：" + result);
         JSONObject resJson = null;
         if(result!=null&&!result.equals("")){
@@ -78,6 +77,46 @@ public class DimTourDevcEntranceGuardCompoent {
             }
         }
     }
+//    @RequestMapping("acsDeviceList")//取消已订阅事件
+//    public String acsDeviceList_86(){
+//        ArtemisConfig.host = "10.22.253.20:86";
+//        ArtemisConfig.appKey = "28325201";
+//        ArtemisConfig.appSecret  = "mlnirGmRGAGsq29fGLt3";
+//        final String api = ARTEMIS_PATH + "/api/resource/v1/acsDevice/acsDeviceList";
+//        Map<String,String> path = new HashMap<String,String>(2){
+//            {
+//                put(IP_TRPE,api);
+//            }
+//        };
+//        String contentType = "application/json";
+//        JSONObject jsonBody = new JSONObject();
+//        jsonBody.put("pageNo", 1);   //此参数非必填
+//        jsonBody.put("pageSize", 100);   //此参数非必填
+//
+//        String body = jsonBody.toJSONString();
+//        String result = ArtemisHttpUtil.doPostStringArtemis(path, body, null, contentType, null);
+//        return result;
+//    }
+//    @RequestMapping("acsDeviceList")//取消已订阅事件
+//    public String acsDeviceList_446(){
+//        ArtemisConfig.host = "10.22.253.20:446";
+//        ArtemisConfig.appKey = "28325201";
+//        ArtemisConfig.appSecret  = "mlnirGmRGAGsq29fGLt3";
+//        final String api = ARTEMIS_PATH + "/api/resource/v1/acsDevice/acsDeviceList";
+//        Map<String,String> path = new HashMap<String,String>(2){
+//            {
+//                put(IP_TRPE,api);
+//            }
+//        };
+//        String contentType = "application/json";
+//        JSONObject jsonBody = new JSONObject();
+//        jsonBody.put("pageNo", 1);   //此参数非必填
+//        jsonBody.put("pageSize", 100);   //此参数非必填
+//
+//        String body = jsonBody.toJSONString();
+//        String result = ArtemisHttpUtil.doPostStringArtemis(path, body, null, contentType, null);
+//        return result;
+//    }
     public void analysisList(JSONArray list){
 //                "acsDevIndexCode": "35750a57f20f4a2f989c399cd088ffde",//门禁设备唯一标识
 //                "acsDevName": "fack",//	门禁设备名称
@@ -140,7 +179,7 @@ public class DimTourDevcEntranceGuardCompoent {
     }
 
     public int checkIsOnline(String ip){
-        ArtemisConfig.host = "10.22.253.20:86";
+        ArtemisConfig.host = "10.22.253.20:446";
         ArtemisConfig.appKey = "28325201";
         ArtemisConfig.appSecret  = "mlnirGmRGAGsq29fGLt3";
         final String api = ARTEMIS_PATH + "/api/nms/v1/online/acs_device/get";
@@ -181,7 +220,11 @@ public class DimTourDevcEntranceGuardCompoent {
                     if(list!=null&&!list.isEmpty()){
                         Integer online = list.getJSONObject(0).getInteger("online");
                         System.out.println("获取解析成功>>>>>>>>>>>>取0:"+list.getJSONObject(0).getInteger("online"));
-                        return online;
+                        if(online==null){
+                            return 0;
+                        }else{
+                            return online;
+                        }
                     }else{
                         System.out.println("获取解析成功>>>>>>>>>>>>列表为空");
                         return 0;

@@ -56,8 +56,8 @@ public class DimTourDevcVideoSurveillanceCompoent {
     private static final String FIND_CAMERA_INFO_PAGE_BY_TREENODE = "/api/common/v1/remoteControlUnitRestService/findCameraInfoPageByTreeNode";//此接口用来获取所有视频数据。
 
 //    private static final String PREVIEWURLS = "/api/video/v1/cameras/previewURLs";
-    //视频设备 12 分钟
-    @Scheduled(fixedRate=720000)
+    //视频设备 3 分钟
+    @Scheduled(fixedRate=180000)
     public void requestList(){
         ArtemisConfig.host = "111.1.24.130:443";
         ArtemisConfig.appKey = "24828082";

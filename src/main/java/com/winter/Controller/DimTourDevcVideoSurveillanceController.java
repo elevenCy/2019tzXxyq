@@ -1,16 +1,53 @@
 package com.winter.Controller;
 
 
+import com.alibaba.fastjson.JSONObject;
+import com.hikvision.artemis.sdk.ArtemisHttpUtil;
+import com.hikvision.artemis.sdk.config.ArtemisConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by h on 2018/12/6.
  */
-//@RestController//请求
+@RestController//请求
 public class DimTourDevcVideoSurveillanceController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    private static final String IP_TRPE = "https://";
+    private static final String ARTEMIS_PATH  = "/artemis";
+
+    @RequestMapping(value="/acsDeviceList", method= {RequestMethod.GET,RequestMethod.POST})//订阅事件
+    @ResponseBody
+    public String acsDeviceList(String port,Integer pageNo,Integer pageSize){
+        ArtemisConfig.host = "10.22.253.20:"+port;
+        ArtemisConfig.appKey = "28325201";
+        ArtemisConfig.appSecret  = "mlnirGmRGAGsq29fGLt3";
+        final String api = ARTEMIS_PATH + "/api/resource/v1/acsDevice/acsDeviceList";
+        Map<String,String> path = new HashMap<String,String>(2){
+            {
+                put(IP_TRPE,api);
+            }
+        };
+        String contentType = "application/json";
+        JSONObject jsonBody = new JSONObject();
+        jsonBody.put("pageNo", pageNo);   //此参数非必填
+        jsonBody.put("pageSize", pageSize);   //此参数非必填
+
+        String body = jsonBody.toJSONString();
+        String result = ArtemisHttpUtil.doPostStringArtemis(path, body, null, null, contentType,null);
+        System.out.println("请求路径："+ api + ",请求参数："+ body + ",返回结果：" + result);
+        return result;
+    }
+
 
 //    @Autowired
 //    private  DimTourDevcVideoSurveillanceService dimTourDevcVideoSurveillanceService;
